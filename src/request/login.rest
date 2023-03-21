@@ -1,0 +1,13 @@
+GET http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "username":"soubin"
+}
+###
+POST http://localhost:4000/cus_auth
+Content-Type: application/json
+{
+    "cus_id":1000,
+    "cus_pwd":"pass9999",
+}
