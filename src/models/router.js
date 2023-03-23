@@ -28,6 +28,7 @@ const RegisterCustomer=require('../controllers/client/register')
 const Report=require("../controllers/admin/report")
 const multer = require('multer')
 const tokenHook=require('../middleware/auth').validateToken;
+const Outlet = require("../controllers/admin/outlet")
 
 const fileFilter = (req, file, cb) => {
     const allowedTypes = ['image/img', 'image/png', 'image/jpeg', 'image/gif','image/jpg']
@@ -194,6 +195,9 @@ function authentication(req, res, next) {
         next()
     })
 }
+const outlet = async(app)=>{
+    app.get("/outlet",Outlet.getOutletList)
+}
 
 module.exports = {
     category,
@@ -221,4 +225,5 @@ module.exports = {
     walletTxn,
     report,
     ticket,
+    outlet
 }

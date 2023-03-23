@@ -214,6 +214,22 @@ const fetchOrderByDate = async (req, res) => {
     })
 }
 
+const createDynCustomer = async (customer)=>{
+    const name = customer.name;
+    const tel = customer.tel;
+    const shipping = customer.shipping;
+    const custAddress = customer.address;
+    const payment = customer.payment;
+    const outlet = customer.outlet;
+    const sqlCom = `INSERT INTO dynamic_customer(name, tel, source_delivery_branch, 
+        dest_delivery_branch, payment_code, shop_name) 
+    VALUES ('${name}','${tel}','${shipping}','${custAddress}','${payment}','${outlet}')`
+    Db.query(sqlCom,(er,re)=>{
+        if (er) return '01';
+        return '00'
+    })
+}
+
 module.exports = {
     createOrder,
     fetchOrder,
