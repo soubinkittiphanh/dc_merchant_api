@@ -130,7 +130,7 @@ const fetchProdMobile = async (req, res) => {
     p.stock_count AS card_count ,IFNULL(s.cnt,0) AS sale_count, o.name AS outlet_name
     FROM product p 
     LEFT JOIN product_category c ON c.categ_id=p.pro_category
-    LLEFT JOIN outlet o ON o.id = p.outlet
+    LEFT JOIN outlet o ON o.id = p.outlet
     LEFT JOIN image_path i ON i.pro_id=p.pro_id
     LEFT JOIN  (SELECT IFNULL(COUNT(pro_id),0) AS cnt,pro_id FROM card_sale GROUP BY pro_id ) s ON s.pro_id=p.pro_id ORDER BY p.pro_price;`;
     Db.query(sqlCom, (er, re) => {
