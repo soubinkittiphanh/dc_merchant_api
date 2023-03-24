@@ -37,6 +37,8 @@ const buildApp = async () => {
     Router.report(app);
     Router.ticket(app);
     Router.outlet(app);
+    Router.payment(app);
+    Router.shipping(app);
     return app;
 }
 
