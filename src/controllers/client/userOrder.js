@@ -10,6 +10,7 @@ const createOrder = async (req, res) => {
     const user_id = body.user_id;
     const cart_data = body.cart_data;
     const customer = body.customer;
+    console.log("Customer "+customer);
     //*******NOTE THE PRODUCT TO UPDATE PRDUCT SALE COUNT (STATISTIC)*******//
     let listOfProduct = [];
     //*******END NOTE THE PRODUCT TO UPDATE PRDUCT SALE COUNT (STATISTIC)*******//
