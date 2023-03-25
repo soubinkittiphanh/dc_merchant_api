@@ -9,6 +9,7 @@ const createOrder = async (req, res) => {
     console.log(`************* ${new Date()} *************`);
     const user_id = body.user_id;
     const cart_data = body.cart_data;
+    const customer = body.customer;
     //*******NOTE THE PRODUCT TO UPDATE PRDUCT SALE COUNT (STATISTIC)*******//
     let listOfProduct = [];
     //*******END NOTE THE PRODUCT TO UPDATE PRDUCT SALE COUNT (STATISTIC)*******//
@@ -77,6 +78,8 @@ const createOrder = async (req, res) => {
                             
                         }
                         else {
+                            // ******** create dynamic customer ********//
+                            createDynCustomer(customer,lockingSessionId);
                             console.log(`************* PROCESS ORDER IS DONE **************`);
                             res.send("Transaction completed");
                             //update stock value
@@ -85,6 +88,8 @@ const createOrder = async (req, res) => {
                         }
                     })
                 } else {
+                     // ******** create dynamic customer ********//
+                     createDynCustomer(customer,lockingSessionId);
                     console.log(`************* PROCESS ORDER IS DONE **************`);
                     res.send("Transaction completed");
                     //update stock value
@@ -214,7 +219,7 @@ const fetchOrderByDate = async (req, res) => {
     })
 }
 
-const createDynCustomer = async (customer)=>{
+const createDynCustomer = async (customer,lockingSessionId)=>{
     const name = customer.name;
     const tel = customer.tel;
     const shipping = customer.shipping;
@@ -222,8 +227,8 @@ const createDynCustomer = async (customer)=>{
     const payment = customer.payment;
     const outlet = customer.outlet;
     const sqlCom = `INSERT INTO dynamic_customer(name, tel, source_delivery_branch, 
-        dest_delivery_branch, payment_code, shop_name) 
-    VALUES ('${name}','${tel}','${shipping}','${custAddress}','${payment}','${outlet}')`
+        dest_delivery_branch, payment_code, shop_name,locking_session_id) 
+    VALUES ('${name}','${tel}','${shipping}','${custAddress}','${payment}','${outlet}','${lockingSessionId}')`
     Db.query(sqlCom,(er,re)=>{
         if (er) return '01';
         return '00'
