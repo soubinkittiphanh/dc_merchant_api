@@ -227,9 +227,10 @@ const createDynCustomer = async (customer,lockingSessionId)=>{
     const custAddress = customer.address;
     const payment = customer.payment;
     const outlet = customer.outlet;
+    const shippingFee = customer.shippingFee;
     const sqlCom = `INSERT INTO dynamic_customer(name, tel, source_delivery_branch, 
-        dest_delivery_branch, payment_code, shop_name,locking_session_id) 
-    VALUES ('${name}','${tel}','${shipping}','${custAddress}','${payment}','${outlet}','${lockingSessionId}')`
+        dest_delivery_branch, payment_code, shop_name,locking_session_id,shipping_fee_by) 
+    VALUES ('${name}','${tel}','${shipping}','${custAddress}','${payment}','${outlet}','${lockingSessionId}','${shippingFee}')`
     Db.query(sqlCom,(er,re)=>{
         if (er) return '01';
         return '00'
