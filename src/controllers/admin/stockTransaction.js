@@ -42,6 +42,7 @@ const createStockTransaction=async(req,res)=>{
         })
     });
     //Update stock amount in product table
+    userOrder.updateProductStockCountSingleProduct(product_id);
     updateProductStockCountDirect();
 
 }

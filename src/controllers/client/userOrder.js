@@ -10,7 +10,7 @@ const createOrder = async (req, res) => {
     const user_id = body.user_id;
     const cart_data = body.cart_data;
     const customer = body.customer;
-    console.log("Customer "+customer);
+    console.log("product discount "+cart_data[0]["product_discount"]);
     //*******NOTE THE PRODUCT TO UPDATE PRDUCT SALE COUNT (STATISTIC)*******//
     let listOfProduct = [];
     //*******END NOTE THE PRODUCT TO UPDATE PRDUCT SALE COUNT (STATISTIC)*******//
@@ -42,9 +42,9 @@ const createOrder = async (req, res) => {
             }
             if (i == cart_data.length - 1) {
                 //Last row
-                sqlCom = sqlCom + `(${genOrderId},${user_id},${el.product_id},${el.product_amount},${el.product_price_retail},${el.product_price_retail * el.product_amount},${el.product_discount || 0},${lockingSessionId});`;
+                sqlCom = sqlCom + `(${genOrderId},${user_id},${el.product_id},${el.product_amount},${el.product_price_retail},${el.product_price_retail * el.product_amount},${el.product_discount},${lockingSessionId});`;
             } else {
-                sqlCom = sqlCom + `(${genOrderId},${user_id},${el.product_id},${el.product_amount},${el.product_price_retail},${el.product_price_retail * el.product_amount},${el.product_discount || 0},${lockingSessionId}),`;
+                sqlCom = sqlCom + `(${genOrderId},${user_id},${el.product_id},${el.product_amount},${el.product_price_retail},${el.product_price_retail * el.product_amount},${el.product_discount},${lockingSessionId}),`;
             }
             const QRCode = generateQR()
             //20221209 sqlComCardSale = `INSERT INTO card_sale(card_code,card_order_id,price,qrcode,pro_id,pro_discount) SELECT c.card_number,'${genOrderId}','${el.product_price}','${QRCode}','${el.product_id}','${el.product_discount || 0}' FROM card c WHERE c.card_isused =0 AND c.product_id='${el.product_id}' LIMIT ${el.product_amount};`;
@@ -242,5 +242,6 @@ module.exports = {
     fetchOrder,
     fetchOrderByDate,
     fetchMaxOrderByUserId,
-    updateStockCount
+    updateStockCount,
+    updateProductStockCountSingleProduct
 }
