@@ -38,11 +38,11 @@ const createStockTransaction=async(req,res)=>{
         Db.query(sqlCom,(er,re)=>{
             console.log(er);
             if (er)return res.send("Error: "+er)
+             userOrder.updateProductStockCountSingleProduct(product_id);
             res.send("Transaction completed");
         })
     });
     //Update stock amount in product table
-    userOrder.updateProductStockCountSingleProduct(product_id);
     // updateProductStockCountDirect();
 
 }
