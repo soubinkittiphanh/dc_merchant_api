@@ -245,12 +245,13 @@ const findOrderByPaymentType = async (req,res) => {
     if (paymentCode=='ALL'){
         sqlComOption = `AND c.payment_code NOT IN('COD','RIDER_COD')`;
     }
-    const sqlCom = `SELECT c.name,c.tel,c.source_delivery_branch AS shipping,c.payment_code,c.shop_name,c.shipping_fee_by,
+    const sqlCom = `SELECT c.name,c.tel,c.source_delivery_branch AS shipping,c.payment_code,u.name AS shop_name,c.shipping_fee_by,
     o.order_id,o.user_id,o.product_id,o.product_amount,o.product_price,o.product_discount,o.txn_date,o.locking_session_id,
     p.pro_name
     FROM dynamic_customer c 
     LEFT JOIN user_order o ON c.locking_session_id = o.locking_session_id
     LEFT JOIN product p on p.pro_id = o.product_id
+    LEFT JOIN outlet u on u.id = c.shop_name
     WHERE c.txn_date BETWEEN '${fromDate} 00:00:00' AND '${toDate} 23:59:59' ${sqlComOption}`
     console.log(sqlCom);
     Db.query(sqlCom, (er, re) => {
