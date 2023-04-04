@@ -237,11 +237,67 @@ const createDynCustomer = async (customer,lockingSessionId)=>{
     })
 }
 
+const findOrderByPaymentType = async (req,res) => {
+    const {paymentCode,fromDate, toDate} = req.query;
+    console.log("Request query param "+fromDate);
+    console.log("Request query param "+toDate);
+    let sqlComOption = `AND c.payment_code IN('${paymentCode}','RIDER_COD')`
+    if (paymentCode=='ALL'){
+        sqlComOption = `AND c.payment_code NOT IN('COD','RIDER_COD')`;
+    }
+    const sqlCom = `SELECT c.name,c.tel,c.source_delivery_branch AS shipping,c.payment_code,c.shop_name,c.shipping_fee_by,
+    o.order_id,o.user_id,o.product_id,o.product_amount,o.product_price,o.product_discount,o.txn_date,o.locking_session_id,
+    p.pro_name
+    FROM dynamic_customer c 
+    LEFT JOIN user_order o ON c.locking_session_id = o.locking_session_id
+    LEFT JOIN product p on p.pro_id = o.product_id
+    WHERE c.txn_date BETWEEN '${fromDate} 00:00:00' AND '${toDate} 23:59:59' ${sqlComOption}`
+    console.log(sqlCom);
+    Db.query(sqlCom, (er, re) => {
+        if (er) return res.send("Error: " + er)
+        res.send(re);
+    })
+}
+
+const orderSettlement = async (req, res) => {
+    let {lockingSessionId,paymentCode,codFee} = req.body;
+
+    console.log("Request query param "+req.query);
+    let sqlCom = `UPDATE dynamic_customer SET payment_code = '${paymentCode}' WHERE locking_session_id = '${lockingSessionId}';`;
+    // let sqlCom = 'SELECT * FROM dynamic_customer'
+    const [rows] = await dbAsync.execute(sqlCom);
+    
+    // console.log("response 0 "+rows);
+    console.log("response 1 "+lockingSessionId);
+    console.log("response 1 "+paymentCode);
+    console.log("response 1 "+codFee);
+    console.log("response 1 "+rows.affectedRows);
+    console.log("sql 1 "+sqlCom);
+    
+
+    if(codFee && +codFee > 0){
+        // ******** create fee for the COD ************//
+        sqlCom = `UPDATE user_order SET cod_fee ='${codFee}' WHERE locking_session_id = '${lockingSessionId}'`
+        console.log("sql 2 "+sqlCom);
+        Db.query(sqlCom,(er,re)=>{
+            if (er) return res.send('Error: ' + er)
+            console.log("Effected: "+re.effectedRows);
+            res.send('Transaction completed')
+        })
+    }else{
+        res.status(200).send("Transaction completed")
+    }
+
+
+}
+
 module.exports = {
     createOrder,
     fetchOrder,
     fetchOrderByDate,
     fetchMaxOrderByUserId,
     updateStockCount,
-    updateProductStockCountSingleProduct
+    updateProductStockCountSingleProduct,
+    findOrderByPaymentType,
+    orderSettlement,
 }

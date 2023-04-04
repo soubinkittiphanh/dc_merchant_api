@@ -11,8 +11,6 @@ const config={
         database:'peeair_demo',
         // database:'online_store_pakse_dev',
         port: 34248,
-
-
     }
 }
 module.exports=config;
