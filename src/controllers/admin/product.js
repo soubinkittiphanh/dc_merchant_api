@@ -11,9 +11,11 @@ const createProd = async (req, res) => {
     const pro_desc = body.pro_desc;
     const pro_status = +body.pro_status;
     const image_path = req.body.imagesObj;
-    const outlet = body.pro_outlet
+    const outlet = body.outlet
     const costPrice = body.pro_cost_price;
     const retail_percent = body.pro_retail_price||0.0;
+    console.log(" outlet: ", outlet);
+    // return res.send("Okay")
     let sqlComImages = 'INSERT INTO image_path(pro_id, img_name, img_path)VALUES';
     console.log("************* CREATE PRODUCT *****************");
     console.log(`*************Payload: ${image_path} *****************`);/// test upload
@@ -34,6 +36,7 @@ const createProd = async (req, res) => {
         });
         const sqlCom = `INSERT INTO product(pro_category, pro_id, pro_name, pro_price, pro_desc, pro_status,retail_cost_percent,outlet,cost_price)VALUES('${pro_cat}','${pro_id}','${pro_name}','${pro_price}','${pro_desc}','${pro_status}','${retail_percent}','${outlet}','${costPrice}');`
         //*****************  INSERT PRODUCT SQL  *****************//
+        console.log("SQL CREATE PRODUCT: ",sqlCom);
         Db.query(sqlCom, (er, re) => {
             console.log("Execute:=>");
             if (er) {
