@@ -15,7 +15,7 @@ const createOrder = async (req, res) => {
     let listOfProduct = [];
     //*******END NOTE THE PRODUCT TO UPDATE PRDUCT SALE COUNT (STATISTIC)*******//
     let i = 0;
-    let sqlCom = `INSERT INTO user_order(order_id, user_id, product_id, product_amount, product_price, order_price_total, product_discount,locking_session_id) VALUES `;
+    let sqlCom = `INSERT INTO user_order(order_id, user_id, product_id, product_amount, product_price, order_price_total, product_discount,locking_session_id,rider_fee) VALUES `;
     let sqlComCardSale = ``;
     //Get last order_id
     console.log(`************* GETING ORDER ID **************`);
@@ -42,9 +42,9 @@ const createOrder = async (req, res) => {
             }
             if (i == cart_data.length - 1) {
                 //Last row
-                sqlCom = sqlCom + `(${genOrderId},${user_id},${el.product_id},${el.product_amount},${el.product_price_retail},${el.product_price_retail * el.product_amount},${el.product_discount},${lockingSessionId});`;
+                sqlCom = sqlCom + `(${genOrderId},${user_id},${el.product_id},${el.product_amount},${el.product_price_retail},${el.product_price_retail * el.product_amount},${el.product_discount},${lockingSessionId},${customer.riderFee});`;
             } else {
-                sqlCom = sqlCom + `(${genOrderId},${user_id},${el.product_id},${el.product_amount},${el.product_price_retail},${el.product_price_retail * el.product_amount},${el.product_discount},${lockingSessionId}),`;
+                sqlCom = sqlCom + `(${genOrderId},${user_id},${el.product_id},${el.product_amount},${el.product_price_retail},${el.product_price_retail * el.product_amount},${el.product_discount},${lockingSessionId},${customer.riderFee}),`;
             }
             const QRCode = generateQR()
             //20221209 sqlComCardSale = `INSERT INTO card_sale(card_code,card_order_id,price,qrcode,pro_id,pro_discount) SELECT c.card_number,'${genOrderId}','${el.product_price}','${QRCode}','${el.product_id}','${el.product_discount || 0}' FROM card c WHERE c.card_isused =0 AND c.product_id='${el.product_id}' LIMIT ${el.product_amount};`;
@@ -246,7 +246,7 @@ const findOrderByPaymentType = async (req,res) => {
         sqlComOption = `AND c.payment_code NOT IN('COD','RIDER_COD')`;
     }
     const sqlCom = `SELECT c.name,c.tel,c.source_delivery_branch AS shipping,c.dest_delivery_branch AS cus_address,c.payment_code,u.name AS shop_name,c.shipping_fee_by,
-    o.order_id,o.user_id,o.product_id,o.product_amount,o.product_price,o.product_discount,o.txn_date,o.locking_session_id,
+    o.order_id,o.user_id,o.product_id,o.product_amount,o.product_price,o.product_discount,o.txn_date,o.locking_session_id,o.rider_fee,
     p.pro_name
     FROM dynamic_customer c 
     LEFT JOIN user_order o ON c.locking_session_id = o.locking_session_id
