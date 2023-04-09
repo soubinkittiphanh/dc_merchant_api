@@ -55,6 +55,7 @@ const createOrder = async (req, res) => {
         //update order table
         console.log(`************* PUTTING TXN INTO USER ORDER TABLE **************`);
         console.log(`************* ${new Date()} *************`);
+        console.log(`************* ${sqlCom} *************`);
         Db.query(sqlCom, (er, re) => {
             if (er) {
                 return res.send("Error: " + er);
@@ -228,9 +229,11 @@ const createDynCustomer = async (customer,lockingSessionId)=>{
     const payment = customer.payment;
     const outlet = customer.outlet;
     const shippingFee = customer.shippingFee;
+    const bookingDay = customer.workingDay;
     const sqlCom = `INSERT INTO dynamic_customer(name, tel, source_delivery_branch, 
-        dest_delivery_branch, payment_code, shop_name,locking_session_id,shipping_fee_by) 
-    VALUES ('${name}','${tel}','${shipping}','${custAddress}','${payment}','${outlet}','${lockingSessionId}','${shippingFee}')`
+        dest_delivery_branch, payment_code, shop_name,locking_session_id,shipping_fee_by,txn_date) 
+    VALUES ('${name}','${tel}','${shipping}','${custAddress}','${payment}','${outlet}','${lockingSessionId}','${shippingFee}','${bookingDay}')`
+    console.log("customer sql: ",sqlCom);
     Db.query(sqlCom,(er,re)=>{
         if (er) return '01';
         return '00'
