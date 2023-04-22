@@ -95,6 +95,7 @@ const updateProd = async (req, res) => {
 
     })
 }
+
 const fetchProd = async (req, res) => {
     console.log("*************** FETCH PRODUCT ***************");
     console.log(`*************Payload: *****************ss`);
