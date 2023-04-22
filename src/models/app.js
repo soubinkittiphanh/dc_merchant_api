@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require("express");
 const cors = require("cors");
 const Router = require('./router')
+const myRouter = require("../router")
 const buildApp = async () => {
     const app = express();
     app.use(cors());
@@ -11,6 +12,7 @@ const buildApp = async () => {
     app.get("/hello", (req, res) => {
         res.send("Succeed server is ready")
     })
+    app.use("/api",myRouter.orderRouter);
     Router.category(app);
     Router.product(app);
     Router.sale(app);

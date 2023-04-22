@@ -22,7 +22,7 @@ const checkStockAvailability = async (product_id, order_qty, lockingSessionId) =
         } else {
             statusCode = 200;
             console.log("Statuscode: " + statusCode);
-            let cardLockingResponse = await lockCardRecord(lockingSessionId, order_qty,product_id);
+            let cardLockingResponse = await lockCardRecord(lockingSessionId, order_qty, product_id);
             if (cardLockingResponse.includes('05')) {
                 statusCode = 503
             } else {
@@ -37,7 +37,7 @@ const checkStockAvailability = async (product_id, order_qty, lockingSessionId) =
 }
 
 //******** Lock card record during processing order inorder to avoid dupplicate card number saling ******* */
-const lockCardRecord = async (lockingSessionId, order_qty,product_id) => {
+const lockCardRecord = async (lockingSessionId, order_qty, product_id) => {
     let lockCardRecordResponse = '00';
     const sqlCom = `UPDATE card SET locking_session_id='${lockingSessionId}',card_isused=3 WHERE product_id='${product_id}' AND card_isused=0 LIMIT ${order_qty}`
     try {
@@ -51,6 +51,58 @@ const lockCardRecord = async (lockingSessionId, order_qty,product_id) => {
     return lockCardRecordResponse;
 }
 
+const reverseUserActivityHistory = async (lockingSessionId) => {
+
+    const sqlCom = `DELETE FROM user_activity WHERE locking_session_id = '${lockingSessionId}'`
+    try {
+        const response = await dbAsync.query(sqlCom);
+        console.log("row count: ", response[0].affectedRows);
+        const effectedRows = response[0].affectedRows || 0
+        if (effectedRows == 0) {
+            response.mti = '05'
+            response.message = `No record effeced for command: ${sqlCom}`
+        }
+        console.log(`******* Reverse user activity response: ${response}`);
+    } catch (error) {
+        console.log("An error occured: " + error);
+        response.mti = '05'
+        response.message = `Database query error: ${error}`
+        console.log(("Error: " + error));
+    }
+
+}
+
+const trackUserActivityHistory = async (activity) => {
+    const { userId, action, remark, table, recordId, lockingSessionId } = activity
+    const sqlCmd = `INSERT INTO user_activity( user_id, activity, remark,table_name,record_id,locking_session_id) 
+    VALUES ('${userId}','${action}','${remark}','${table}','${recordId}','${lockingSessionId}')`
+    console.log("Mysql ", sqlCmd);
+
+    let response = {
+        'mti': '00',
+        'message': 'Request succeed'
+    }
+    try {
+        const response = await dbAsync.query(sqlCmd);
+        console.log("create user activity row count: ", response[0].affectedRows);
+        const effectedRows = response[0].affectedRows || 0
+        if (effectedRows == 0) {
+            response.mti = '05'
+            response.message = `No record effeced for command: ${sqlCmd}`
+        }
+        console.log(`******* Track user activity reponse: +${response}`);
+    } catch (error) {
+        console.log("An error occured: " + error);
+        response.mti = '05'
+        response.message = `Database query error: ${error}`
+        console.log(("Error: " + error));
+    }
+    return response;
+
+}
+
 module.exports = {
     checkStockAvailability,
+    trackUserActivityHistory,
+    reverseUserActivityHistory,
 }

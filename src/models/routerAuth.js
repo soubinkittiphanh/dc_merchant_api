@@ -91,7 +91,7 @@ function authentication(req, res, next) {
     console.log("Middleware: "+token);
     if (token == null) return res.sendStatus(401).send('Invalid token null')
     jwt.verify(token, Token.actksecret, (er, user) => {
-        if (er) return res.send('Token invalid or expired!').status(403)//res.sendStatus(403).send('invalid')
+        if (er) return res.status(403).send('Token invalid or expired!')//res.sendStatus(403).send('invalid')
         console.log(user);
         req.user = user;
         next()
