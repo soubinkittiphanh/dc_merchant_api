@@ -108,7 +108,7 @@ const fetchProd = async (req, res) => {
     //             WHERE d.card_isused!=2
     //            GROUP BY d.product_id) d 
     // ON d.card_pro_id=p.pro_id ORDER BY p.pro_price;`;
-    const sqlCom =`SELECT p.*,c.categ_name,IFNULL(i.img_name,'No image') AS img_name,i.img_path,
+    const sqlCom =`SELECT DISTINCT p.*,c.categ_name,IFNULL(i.img_name,'No image') AS img_name,i.img_path,
     p.stock_count AS card_count ,IFNULL(s.cnt,0) AS sale_count, o.name AS outlet_name
     FROM product p 
     LEFT JOIN product_category c ON c.categ_id=p.pro_category
