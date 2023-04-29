@@ -208,7 +208,7 @@ const findOrderByUserId = async (req, res) => {
 
 }
 const changeOrderStatus = async (req, res) => {
-    const { orderId, status, userId } = req.query;
+    const { orderId, status, userId } = req.body;
     const sqlCmd = `UPDATE user_order set record_status = ${status} WHERE order_id = '${orderId}'`
     console.log("sqlCommand: ", sqlCmd);
     const lockingSessionId = Date.now();
