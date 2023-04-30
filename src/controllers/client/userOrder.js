@@ -208,8 +208,8 @@ const findOrderByUserId = async (req, res) => {
 
 }
 const changeOrderStatus = async (req, res) => {
-    const { orderId, status, userId } = req.body;
-    const sqlCmd = `UPDATE user_order set record_status = ${status} WHERE order_id = '${orderId}'`
+    const { orderId, status, userId,reason } = req.body;
+    const sqlCmd = `UPDATE user_order set record_status = ${status}, cancel_reason='${reason}' WHERE order_id = '${orderId}'`
     console.log("sqlCommand: ", sqlCmd);
     const lockingSessionId = Date.now();
     activity = {
@@ -303,7 +303,7 @@ const findOrderByPaymentType = async (req, res) => {
         sqlComOption = `AND c.payment_code NOT IN('COD','RIDER_COD')`;
     }
     const sqlCom = `SELECT c.name,c.tel,c.source_delivery_branch AS shipping,c.dest_delivery_branch AS cus_address,c.payment_code,u.name AS shop_name,c.shipping_fee_by,
-    o.order_id,o.user_id,o.product_id,o.product_amount,o.product_price,o.product_discount,o.txn_date,o.locking_session_id,o.rider_fee,o.record_status,
+    o.order_id,o.user_id,o.product_id,o.product_amount,o.product_price,o.product_discount,o.txn_date,o.locking_session_id,o.rider_fee,o.record_status,o.cancel_reason,
     p.pro_name
     FROM dynamic_customer c 
     LEFT JOIN user_order o ON c.locking_session_id = o.locking_session_id
