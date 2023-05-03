@@ -301,8 +301,8 @@ const findOrderByPaymentType = async (req, res) => {
     console.log("Request query param " + toDate);
     let sqlComOption = `AND c.payment_code IN('${paymentCode}','RIDER_COD')`
     if (paymentCode == 'ALL') {
-        sqlComOption = `AND c.payment_code NOT IN('COD','RIDER_COD')`;
-        // sqlComOption = ``;
+        // sqlComOption = `AND c.payment_code NOT IN('COD','RIDER_COD')`;
+        sqlComOption = ``;
     }
     const sqlCom = `SELECT c.name,c.tel,c.source_delivery_branch AS shipping,c.dest_delivery_branch AS cus_address,c.payment_code,u.name AS shop_name,c.shipping_fee_by,
     o.order_id,o.user_id,o.product_id,o.product_amount,o.product_price,o.product_discount,o.txn_date,o.locking_session_id,o.rider_fee,o.record_status,o.cancel_reason,
