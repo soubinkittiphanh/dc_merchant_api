@@ -7,6 +7,7 @@ const db_config={
     password:env.db.password,
     database:env.db.database,
     port:env.db.port,
+    multipleStatements:true
 }
 
 

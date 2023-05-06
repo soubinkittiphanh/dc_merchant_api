@@ -1,15 +1,29 @@
 const Db = require('../../config/dbcon')
 const dbAsync = require('../../config/dbconAsync');
 const OrderHelper = require('../../helper/mobile/orderHelper')
+const service = require('../../service').userOrderService;
+//************************* Flow of create order******************************/
+//************************* 1. Check Stock availability for each product *************************
+//************************* 2. Create order in user_order_table *************************
+//************************* 3. Create sale_card for keeping the stock status *************************
+//************************* 4. Create dynamic customer *************************
+//************************* 5. Create order_header *************************
 const createOrder = async (req, res) => {
-    const body = req.body;
+    const { user_id, cart_data, customer } = req.body;
+    let headerRecord = {
+        orderId: '',
+        discount: customer.discount,
+        codFee: 0,
+        riderFee: customer.riderFee,
+        lockingSessionId: ''
+    }
     console.log("************* CREATE ORDER *****************");
     console.log(`*************Payload: ${body} *****************`);
     console.log(`************* CREATING ORDER **************`);
     console.log(`************* ${new Date()} *************`);
-    const user_id = body.user_id;
-    const cart_data = body.cart_data;
-    const customer = body.customer;
+    // ****** TRACK ALL PROCESS STATUS ****** //
+    let allProcessResult = []
+    let processItem = { 'processName': '', 'processResult': '', 'processMessage': '' };
     console.log("product discount " + cart_data[0]["product_discount"]);
     //*******NOTE THE PRODUCT TO UPDATE PRDUCT SALE COUNT (STATISTIC)*******//
     let listOfProduct = [];
@@ -28,6 +42,9 @@ const createOrder = async (req, res) => {
         let genOrderId = re[0]['order_id'];
         if (genOrderId == 0) genOrderId = 10000;
         else genOrderId = parseInt(genOrderId) + 1;
+        headerRecord.orderId = genOrderId;
+        headerRecord.lockingSessionId = lockingSessionId;
+
         console.log(`************* LOOPING THROUGH ALL TXN **************`);
         console.log(`************* ${new Date()} *************`);
         for (let i = 0; i < cart_data.length; i++) {
@@ -47,12 +64,15 @@ const createOrder = async (req, res) => {
                 sqlCom = sqlCom + `(${genOrderId},${user_id},${el.product_id},${el.product_amount},${el.product_price_retail},${el.product_price_retail * el.product_amount},${el.product_discount},${lockingSessionId},${customer.riderFee}),`;
             }
             const QRCode = generateQR()
-            //20221209 sqlComCardSale = `INSERT INTO card_sale(card_code,card_order_id,price,qrcode,pro_id,pro_discount) SELECT c.card_number,'${genOrderId}','${el.product_price}','${QRCode}','${el.product_id}','${el.product_discount || 0}' FROM card c WHERE c.card_isused =0 AND c.product_id='${el.product_id}' LIMIT ${el.product_amount};`;
-            sqlComCardSale = `INSERT INTO card_sale(card_code,card_order_id,price,qrcode,pro_id,pro_discount) SELECT c.card_number,'${genOrderId}','${el.product_price}','${QRCode}','${el.product_id}','${el.product_discount || 0}' FROM card c WHERE c.locking_session_id ='${lockingSessionId}' LIMIT ${el.product_amount};`;
-
-            // sqlComCardSale = `INSERT INTO card_sale(card_code,card_order_id,price,qrcode,pro_id,pro_discount) SELECT c.card_number,'${genOrderId}','${el.product_price}','${QRCode}','${el.product_id}','${el.product_discount || 0}' FROM card c WHERE c.card_isused =0 AND c.product_id='${el.product_id}' LIMIT ${el.product_amount}; UPDATE card SET card_isused=1 WHERE card_number=(SELECT c.card_number FROM card WHERE card_isused =0 AND product_id='${el.product_id}' LIMIT ${el.product_amount};)`;
+            //20230505_1920 sqlComCardSale = `INSERT INTO card_sale(card_code,card_order_id,price,qrcode,pro_id,pro_discount) SELECT c.card_number,'${genOrderId}','${el.product_price}','${QRCode}','${el.product_id}','${el.product_discount || 0}' FROM card c WHERE c.locking_session_id ='${lockingSessionId}' LIMIT ${el.product_amount};`;
+            sqlComCardSale = sqlComCardSale + `INSERT INTO card_sale(card_code,card_order_id,price,qrcode,pro_id,pro_discount) SELECT c.card_number,'${genOrderId}','${el.product_price}','${QRCode}','${el.product_id}','${el.product_discount || 0}' FROM card c WHERE c.locking_session_id ='${lockingSessionId}' LIMIT ${el.product_amount};`;
         }
-        //update order table
+
+
+        processItem.processName = 'STOCK CHECK';
+        processItem.processResult = '00';
+        allProcessResult.push(processItem);
+
         console.log(`************* PUTTING TXN INTO USER ORDER TABLE **************`);
         console.log(`************* ${new Date()} *************`);
         console.log(`************* ${sqlCom} *************`);
@@ -81,7 +101,7 @@ const createOrder = async (req, res) => {
                         }
                         else {
                             // ******** create dynamic customer ********//
-                            createDynCustomer(customer, lockingSessionId);
+                            service.createDynCustomer(customer, lockingSessionId,headerRecord);
                             console.log(`************* PROCESS ORDER IS DONE **************`);
                             res.send("Transaction completed");
                             //update stock value
@@ -91,7 +111,7 @@ const createOrder = async (req, res) => {
                     })
                 } else {
                     // ******** create dynamic customer ********//
-                    createDynCustomer(customer, lockingSessionId);
+                    service.createDynCustomer(customer, lockingSessionId,headerRecord);
                     console.log(`************* PROCESS ORDER IS DONE **************`);
                     res.send("Transaction completed");
                     //update stock value
@@ -209,7 +229,7 @@ const findOrderByUserId = async (req, res) => {
 
 }
 const changeOrderStatus = async (req, res) => {
-    const { orderId, status, userId,reason } = req.body;
+    const { orderId, status, userId, reason } = req.body;
     const sqlCmd = `UPDATE user_order set record_status = ${status}, cancel_reason='${reason}' WHERE order_id = '${orderId}'`
     console.log("sqlCommand: ", sqlCmd);
     const lockingSessionId = Date.now();
@@ -276,24 +296,7 @@ const fetchOrderByDate = async (req, res) => {
     })
 }
 
-const createDynCustomer = async (customer, lockingSessionId) => {
-    const name = customer.name;
-    const tel = customer.tel;
-    const shipping = customer.shipping;
-    const custAddress = customer.address;
-    const payment = customer.payment;
-    const outlet = customer.outlet;
-    const shippingFee = customer.shippingFee;
-    const bookingDay = customer.workingDay;
-    const sqlCom = `INSERT INTO dynamic_customer(name, tel, source_delivery_branch, 
-        dest_delivery_branch, payment_code, shop_name,locking_session_id,shipping_fee_by,txn_date) 
-    VALUES ('${name}','${tel}','${shipping}','${custAddress}','${payment}','${outlet}','${lockingSessionId}','${shippingFee}','${bookingDay}')`
-    console.log("customer sql: ", sqlCom);
-    Db.query(sqlCom, (er, re) => {
-        if (er) return '01';
-        return '00'
-    })
-}
+
 
 const findOrderByPaymentType = async (req, res) => {
     const { paymentCode, fromDate, toDate } = req.query;
@@ -351,6 +354,24 @@ const orderSettlement = async (req, res) => {
 
 }
 
+const multipleStatements = async (req, res) => {
+    const sqlCmd = `UPDATE card_sale SET mark_readed = 0 WHERE card_code ='1680052073744';
+    UPDATE card_sale SET mark_readed = 0 WHERE card_code ='1680052450039';
+    UPDATE card_sale SET mark_readed = 0 WHERE card_code ='1680048751885';`
+
+    Db.query(sqlCmd, (er, re, fields) => {
+        if (er) throw er
+        re.forEach(element => {
+            console.log("Result: ", element.affectedRows);
+            console.log("Change: ", element.changedRows);
+            console.log("message: ", element.message);
+            console.log("Result: ", element);
+        });
+        console.log("Field: ", fields);
+        res.send("done")
+    })
+}
+
 module.exports = {
     createOrder,
     fetchOrder,
@@ -362,4 +383,5 @@ module.exports = {
     orderSettlement,
     findOrderByUserId,
     changeOrderStatus,
+    multipleStatements
 }

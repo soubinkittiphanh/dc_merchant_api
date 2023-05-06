@@ -8,8 +8,8 @@ const config={
         host:'209.209.40.80',
         user:'soubin',
         password:'SDAT@3480',
-        database:'peeair_demo',
-        // database:'online_store_pakse_dev',
+        // database:'peeair_demo',
+        database:'dcommerce_uat',
         port: 34248,
     }
 }
