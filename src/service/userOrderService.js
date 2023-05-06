@@ -33,8 +33,8 @@ const createDynCustomer = async (customer, lockingSessionId,orderHeader) => {
     const shippingFee = customer.shippingFee;
     const bookingDay = customer.workingDay;
     const sqlCom = `INSERT INTO dynamic_customer(name, tel, source_delivery_branch, 
-        dest_delivery_branch, payment_code, shop_name,locking_session_id,shipping_fee_by,txn_date) 
-    VALUES ('${name}','${tel}','${shipping}','${custAddress}','${payment}','${outlet}','${lockingSessionId}','${shippingFee}','${bookingDay}')`
+        dest_delivery_branch, payment_code, shop_name,locking_session_id,shipping_fee_by,txn_date,discount,rider_fee) 
+    VALUES ('${name}','${tel}','${shipping}','${custAddress}','${payment}','${outlet}','${lockingSessionId}','${shippingFee}','${bookingDay}',${customer.discount},${customer.riderFee})`
     console.log("customer sql: ", sqlCom);
     try {
         const [rows, fields] = await dbAsync.execute(sqlCom);
