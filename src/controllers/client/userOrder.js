@@ -18,7 +18,7 @@ const createOrder = async (req, res) => {
         lockingSessionId: ''
     }
     console.log("************* CREATE ORDER *****************");
-    console.log(`*************Payload: ${body} *****************`);
+    console.log(`*************Payload: ${req.body} *****************`);
     console.log(`************* CREATING ORDER **************`);
     console.log(`************* ${new Date()} *************`);
     // ****** TRACK ALL PROCESS STATUS ****** //
