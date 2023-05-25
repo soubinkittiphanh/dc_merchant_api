@@ -2,17 +2,23 @@ const Db = require('../../config/dbcon')
 const Login = require('../../helper/tokenHelper')
 const Authmember = async (req, res) => {
     const body = req.body;
-    console.log("************* Member auth *****************");
-    console.log(`*************Payload: ${body.mem_id} *****************`);
+    console.log("************* Member auth  *****************");
+    console.log(`*************Payload: ${body} *****************`);
     const u_id = body.mem_id;
     const u_pw = body.mem_pwd;
     console.log("mem_id: "+u_id);
     console.log("mem_password: "+u_pw);
-    console.log("login credential: "+body);
      Db.query(`SELECT * FROM user_account WHERE user_id='${u_id}' AND user_pass='${u_pw}'`, (er, re) => {
         if (er) return res.send("Error: " + er)
-        re.length > 0 ? res.send(Login.login(re[0]['user_name'],re[0]['user_id'],re[0]['user_tel'],"_",0,0))
-        : res.send({"accessToken":"","error":"ລະຫັດຜ່ານ ຫລື ໄອດີບໍ່ຖືກຕ້ອງ"})
+        if(re[0]){
+            const {user_id,user_name,user_tel,user_desc} = re[0]
+            console.log("user data: ",user_desc);
+      res.send(Login.login(user_name,user_id,user_tel,"_",0,0))
+            
+        }else{
+            res.send({"accessToken":"","error":"ລະຫັດຜ່ານ ຫລື ໄອດີບໍ່ຖືກຕ້ອງ"})
+        }
+
 
     })
 }

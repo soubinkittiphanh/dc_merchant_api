@@ -9,7 +9,8 @@ const config={
         user:'soubin',
         password:'SDAT@3480',
         // database:'peeair_demo',
-        database:'dcommerce_uat',
+        // database:'dcommerce_uat',
+        database:'dcommerce_production',
         port: 34248,
     }
 }

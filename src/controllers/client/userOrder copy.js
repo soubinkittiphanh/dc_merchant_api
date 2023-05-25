@@ -2,8 +2,6 @@ const Db = require('../../config/dbcon')
 const dbAsync = require('../../config/dbconAsync');
 const OrderHelper = require('../../helper/mobile/orderHelper')
 const service = require('../../service').userOrderService;
-const interalResponse =require('../../common')
-const logger = require('../../api/logger')
 //************************* Flow of create order******************************/
 //************************* 1. Check Stock availability for each product *************************
 //************************* 2. Create order in user_order_table *************************
@@ -19,14 +17,14 @@ const createOrder = async (req, res) => {
         riderFee: customer.riderFee,
         lockingSessionId: ''
     }
-    logger.info("************* CREATE ORDER *****************");
-    logger.info(`*************Payload: ${req.body} *****************`);
-    logger.info(`************* CREATING ORDER **************`);
-    logger.info(`************* ${new Date()} *************`);
+    console.log("************* CREATE ORDER *****************");
+    console.log(`*************Payload: ${req.body} *****************`);
+    console.log(`************* CREATING ORDER **************`);
+    console.log(`************* ${new Date()} *************`);
     // ****** TRACK ALL PROCESS STATUS ****** //
     let allProcessResult = []
     let processItem = { 'processName': '', 'processResult': '', 'processMessage': '' };
-    logger.info("product discount " + cart_data[0]["product_discount"]);
+    console.log("product discount " + cart_data[0]["product_discount"]);
     //*******NOTE THE PRODUCT TO UPDATE PRDUCT SALE COUNT (STATISTIC)*******//
     let listOfProduct = [];
     //*******END NOTE THE PRODUCT TO UPDATE PRDUCT SALE COUNT (STATISTIC)*******//
@@ -34,8 +32,8 @@ const createOrder = async (req, res) => {
     let sqlCom = `INSERT INTO user_order(order_id, user_id, product_id, product_amount, product_price, order_price_total, product_discount,locking_session_id,rider_fee) VALUES `;
     let sqlComCardSale = ``;
     //Get last order_id
-    logger.info(`************* GETING ORDER ID **************`);
-    logger.info(`************* ${new Date()} *************`);
+    console.log(`************* GETING ORDER ID **************`);
+    console.log(`************* ${new Date()} *************`);
     // Card table locking id
     const lockingSessionId = Date.now()
     let productId = ''
@@ -47,16 +45,16 @@ const createOrder = async (req, res) => {
         headerRecord.orderId = genOrderId;
         headerRecord.lockingSessionId = lockingSessionId;
 
-        logger.info(`************* LOOPING THROUGH ALL TXN **************`);
-        logger.info(`************* ${new Date()} *************`);
+        console.log(`************* LOOPING THROUGH ALL TXN **************`);
+        console.log(`************* ${new Date()} *************`);
         for (let i = 0; i < cart_data.length; i++) {
             const el = cart_data[i];
             productId = el.product_id;
-            logger.info(`************* CHECKING STOCK AVAILABILITY **************`);
-            logger.info(`************* ${new Date()} *************`);
+            console.log(`************* CHECKING STOCK AVAILABILITY **************`);
+            console.log(`************* ${new Date()} *************`);
             const count_stock = await OrderHelper.checkStockAvailability(el.product_id, el.product_amount, lockingSessionId);
             if (count_stock != 200) {
-                logger.info("STOCK STATUS CODE: " + count_stock);
+                console.log("STOCK STATUS CODE: " + count_stock);
                 return res.send(count_stock == 503 ? "ເກີດຂໍ້ຜິດພາດ ສິນຄ້າ |" + el.product_id + "| ບໍ່ພຽງພໍ" : "Connection Error");
             }
             if (i == cart_data.length - 1) {
@@ -75,21 +73,21 @@ const createOrder = async (req, res) => {
         processItem.processResult = '00';
         allProcessResult.push(processItem);
 
-        logger.info(`************* PUTTING TXN INTO USER ORDER TABLE **************`);
-        logger.info(`************* ${new Date()} *************`);
-        logger.info(`************* ${sqlCom} *************`);
+        console.log(`************* PUTTING TXN INTO USER ORDER TABLE **************`);
+        console.log(`************* ${new Date()} *************`);
+        console.log(`************* ${sqlCom} *************`);
         Db.query(sqlCom, (er, re) => {
             if (er) {
                 return res.send("Error: " + er);
             }
             // If no error insert to order then we should insert to card_sale for mapping card_sale -> user_order -> card
-            logger.info(`************* PUTTING TXN INTO CARD SALE TABLE **************`);
-            logger.info(`************* ${new Date()} *************`);
+            console.log(`************* PUTTING TXN INTO CARD SALE TABLE **************`);
+            console.log(`************* ${new Date()} *************`);
             Db.query(sqlComCardSale, (er, re) => {
-                logger.info("SQL: " + sqlComCardSale);
+                console.log("SQL: " + sqlComCardSale);
                 if (er) {
-                    logger.error("Error: " + er);
-                    logger.error("Trying to insert to card_sale again: ");
+                    console.log("Error: " + er);
+                    console.log("Trying to insert to card_sale again: ");
                     Db.query(sqlComCardSale, (er, re) => {
                         if (er) {
                             //IF STILL NOT ABLE TO PROCESS SALE THEN WE WILL REVERSE TRANSACTION
@@ -104,21 +102,21 @@ const createOrder = async (req, res) => {
                         else {
                             // ******** create dynamic customer ********//
                             service.createDynCustomer(customer, lockingSessionId, headerRecord);
-                            logger.info(`************* PROCESS ORDER IS DONE **************`);
+                            console.log(`************* PROCESS ORDER IS DONE **************`);
                             res.send("Transaction completed");
                             //update stock value
-                            logger.info(`************* UPDATE STOCK VALUE **************`);
+                            console.log(`************* UPDATE STOCK VALUE **************`);
                             updateStockCount(productId, lockingSessionId);
                         }
                     })
                 } else {
                     // ******** create dynamic customer ********//
                     service.createDynCustomer(customer, lockingSessionId, headerRecord);
-                    logger.info(`************* PROCESS ORDER IS DONE **************`);
+                    console.log(`************* PROCESS ORDER IS DONE **************`);
                     res.send("Transaction completed");
                     //update stock value
-                    logger.info(`************* UPDATE STOCK VALUE **************`);
-                    logger.info(`************* ${new Date()} *************`);
+                    console.log(`************* UPDATE STOCK VALUE **************`);
+                    console.log(`************* ${new Date()} *************`);
                     updateStockCount(productId, lockingSessionId);
                 }
             })
@@ -130,18 +128,18 @@ const updateStockCount = async (productId, lockingSessionId) => {
     //Change card status for those card id is in card sale table 
     //UPDATE card c SET c.card_isused=1 WHERE c.card_isused=0 AND c.card_number IN(SELECT s.card_code FROM card_sale s WHERE s.processing_date >='2022-06-21 00:00:00')
     try {
-        logger.info(`************* ${new Date()}  UPDATE STOCK COUNT **************`);
+        console.log(`************* ${new Date()}  UPDATE STOCK COUNT **************`);
         const [rows, fields] = await dbAsync.execute(`UPDATE card c SET c.card_isused=1 WHERE locking_session_id='${lockingSessionId}'`)
-        logger.info(`*********** ${new Date()} PROCESSED RECORD: ${rows.affectedRows}`);
+        console.log(`*********** ${new Date()} PROCESSED RECORD: ${rows.affectedRows}`);
         await updateProductStockCountSingleProduct(productId);
     } catch (error) {
-        logger.error("Update stock counter error: " + error);
+        console.log("Update stock counter error: " + error);
     }
 
 }
 const updateProductStockCountDirect = async () => {
     //update product table set product sale statistic [sale amount]
-    logger.info(`************* ${new Date()}  updateProductStockCountDirect **************`);
+    console.log(`************* ${new Date()}  updateProductStockCountDirect **************`);
     const sqlCom = `UPDATE product pro  INNER JOIN  (SELECT d.product_id AS card_pro_id,COUNT(d.card_number)-COUNT(cs.card_code) AS card_count 
   FROM card d LEFT JOIN card_sale cs ON cs.card_code=d.card_number 
   WHERE d.card_isused!=2  
@@ -150,9 +148,9 @@ const updateProductStockCountDirect = async () => {
 
     try {
         const [rows, fields] = await dbAsync.execute(sqlCom);
-        logger.info(`*********** ${new Date()} PROCESSED RECORD: ${rows.affectedRows}`);
+        console.log(`*********** ${new Date()} PROCESSED RECORD: ${rows.affectedRows}`);
     } catch (error) {
-        logger.error("Cannot get product sale count");
+        console.log("Cannot get product sale count");
     }
 
 }
@@ -162,13 +160,13 @@ const updateProductStockCountSingleProduct = async (productId) => {
     //Update product stock count after sale 
     //for single product in PRODUCT table
     //********************//********************
-    logger.info(`************* ${new Date()}  updateProductStockCountDirectSingle **************`);
+    console.log(`************* ${new Date()}  updateProductStockCountDirectSingle **************`);
     const sqlCom = `UPDATE product p SET p.stock_count=(SELECT COUNT(c.card_number) FROM card c WHERE product_id=${productId} AND c.card_isused=0) WHERE p.pro_id=${productId};`
     try {
         const [rows, fields] = await dbAsync.execute(sqlCom);
-        logger.info(`*********** ${new Date()} PROCESSED RECORD: => ${rows.affectedRows}`);
+        console.log(`*********** ${new Date()} PROCESSED RECORD: => ${rows.affectedRows}`);
     } catch (error) {
-        logger.error("Cannot get product sale count");
+        console.log("Cannot get product sale count");
     }
 
 }
@@ -180,7 +178,7 @@ const reverseOrderByOrderId = async (orderId) => {
     })
 }
 const generateQR = () => {
-    logger.info("*************** GENERATE QR  ***************");
+    console.log("*************** GENERATE QR  ***************");
 
     let QRCodeStr = '';
     for (let i = 0; i < 16; i++) {
@@ -191,18 +189,18 @@ const generateQR = () => {
     return QRCodeStr;
 }
 const getRandomInt = (max) => {
-    logger.info("*************** GET RANDOM INT  ***************");
+    console.log("*************** GET RANDOM INT  ***************");
 
     return Math.floor(Math.random() * max);
 }
 
 const fetchOrder = async (req, res) => {
-    logger.info("*************** FETCH ORDER  ***************");
+    console.log("*************** FETCH ORDER  ***************");
     const memId = req.query.mem_id;
     const fDate = req.query.f_date;
     const tDate = req.query.t_date;
 
-    logger.info("mem_id: " + memId);
+    console.log("mem_id: " + memId);
     Db.query(`SELECT o.*,p.pro_name FROM user_order o LEFT JOIN product p on o.product_id=p.pro_id 
     WHERE o.user_id ='${memId}' AND o.txn_date BETWEEN '${fDate} 00:00:00' AND '${tDate} 23:59:59' 
     ORDER BY o.order_id DESC`, (er, re) => {
@@ -211,21 +209,19 @@ const fetchOrder = async (req, res) => {
     })
 }
 const findOrderByUserId = async (req, res) => {
-    logger.info("*************** FETCH ORDER  ***************");
+    console.log("*************** FETCH ORDER  ***************");
     const memId = req.query.mem_id;
     const fDate = req.query.f_date;
     const tDate = req.query.t_date;
     const sqlCom = `
-    SELECT o.*,d.*,p.pro_name,p.outlet,p.name as outlet_name,p.tel as shop_tel,
-    s.name as record_status,s.description as record_status_desc 
+    SELECT o.*,d.*,p.pro_name,p.outlet,p.name as outlet_name,p.tel as shop_tel,s.name as record_status,s.description as record_status_desc 
     FROM user_order o
-    LEFT JOIN (SELECT p.pro_id, p.pro_name,p.outlet,u.name,u.tel 
-        FROM product p LEFT JOIN outlet u ON u.id = p.outlet) AS p ON p.pro_id = o.product_id
+    LEFT JOIN (SELECT p.pro_id, p.pro_name,p.outlet,u.name,u.tel FROM product p LEFT JOIN outlet u ON u.id = p.outlet) AS p ON p.pro_id = o.product_id
     LEFT JOIN dynamic_customer d ON d.locking_session_id = o.locking_session_id 
     LEFT JOIN order_status s ON s.id = o.record_status
     WHERE o.user_id = '${memId}' AND o.txn_date BETWEEN'${fDate} 00:00:00' AND '${tDate} 23:59:59'
     `
-    logger.info("Sql command: ", sqlCom);
+    console.log("Sql command: ", sqlCom);
     Db.query(sqlCom, (er, re) => {
         if (er) return res.status(201).send("Database error: " + er)
         return res.status("200").send(re);
@@ -233,15 +229,9 @@ const findOrderByUserId = async (req, res) => {
 
 }
 const changeOrderStatus = async (req, res) => {
-    //TODO: send back the card id to for hitting stock count / Logic complete please test scenior
-    let processResList = [];
-    let tempResponse;
     const { orderId, status, userId, reason } = req.body;
     const sqlCmd = `UPDATE user_order set record_status = ${status}, cancel_reason='${reason}' WHERE order_id = '${orderId}'`
-    logger.info("sqlCommand: ", sqlCmd);
-    // ************ Change record_status from dynamic_customer table ************
-    processResList.push(await changeDynamyCustomerRecordStatus(orderId,status))
-
+    console.log("sqlCommand: ", sqlCmd);
     const lockingSessionId = Date.now();
     activity = {
         userId,
@@ -261,66 +251,17 @@ const changeOrderStatus = async (req, res) => {
             await OrderHelper.reverseUserActivityHistory(lockingSessionId);
             return res.status(201).send("Database error: " + er)
         }
-        logger.info("Number of records affected with warning : " + re.warningCount);
-        logger.info("Message from MySQL Server : " + re.message);
-        logger.info("Number of rows affected : " + re.affectedRows);
-        logger.info("Number of rows changedRows : " + re.changedRows);
-      const response =  await returnStock(orderId)
-      if(response.includes('00')) return res.status("200").send("Transaction completed");
-      return res.status('201').send(`Transaction fail, contact admin to check order ${orderId} stock return`)
-        
+        console.log("Number of records affected with warning : " + re.warningCount);
+        console.log("Message from MySQL Server : " + re.message);
+        console.log("Number of rows affected : " + re.affectedRows);
+        console.log("Number of rows changedRows : " + re.changedRows);
+        return res.status("200").send("Transaction completed");
     })
 }
-
-// return stock 
-
-const returnStock = async(orderId)=>{
-    const sql = `UPDATE card SET card_isused = 0 WHERE card_number IN(SELECT card_code FROM card_sale WHERE card_order_id ='${orderId}')`
-    try {
-        const [rows,fields] = await dbAsync.query(sql);
-        if (rows.changedRows>0) return await deleteCardFromCardSale(orderId)
-        return '01'
-    } catch (error) {
-        logger.error("Database error: ",error);
-        return '01'
-    }
-}
-
-const deleteCardFromCardSale = async(orderId)=>{
-    const sql =`DELETE FROM card_sale WHERE card_order_id ='${orderId}'`
-    try {
-        const [rows,fields] = await dbAsync.query(sql)
-        if(rows.affectedRows>0) return '00'
-        return '01'
-    } catch (error) {
-        logger.error("Server error ",error);
-        return '01'
-    }
-
-}
-const changeDynamyCustomerRecordStatus = async(orderId,status)=>{
-    const sql =`UPDATE dynamic_customer SET record_status = ${status} WHERE locking_session_id =(SELECT locking_session_id from user_order WHERE order_id='${orderId}') limit 1`
-    interalResponse.key = 'change dynamic_customer record status'
-    try {
-        const [rows,fields] = await dbAsync.query(sql)
-        if(rows.affectedRows>0)
-            interalResponse.mti = '00'
-        else
-            interalResponse.mti = '01'
-        
-        return interalResponse;
-    } catch (error) {
-        logger.error("Server error ",error);
-        interalResponse.mti='01'
-        interalResponse.msg = 'Error: '+error
-        return interalResponse
-    }
-}
-
 const fetchMaxOrderByUserId = async (req, res) => {
-    logger.info("*************** FETCH MAX ORDER ID'S TXN  ***************");
+    console.log("*************** FETCH MAX ORDER ID'S TXN  ***************");
     const memId = req.query.mem_id;
-    logger.info("mem_id: " + memId);
+    console.log("mem_id: " + memId);
     Db.query(`SELECT o.*,p.pro_name 
     FROM user_order o LEFT JOIN product p on o.product_id=p.pro_id 
     WHERE o.user_id ='${memId}' AND o.order_id=(SELECT MAX(order_id) 
@@ -332,15 +273,15 @@ const fetchMaxOrderByUserId = async (req, res) => {
 }
 const fetchOrderByDate = async (req, res) => {
     const body = req.body;
-    logger.info("*************** FETCH ORDER BY DATE  ***************");
-    logger.info(`*************Payload: ${body} *****************`);
+    console.log("*************** FETCH ORDER BY DATE  ***************");
+    console.log(`*************Payload: ${body} *****************`);
     const fromDate = req.query.fromDate
     const toDate = req.query.toDate
     const userId = req.query.userId
-    logger.info("************* LOAD ORDER BY DATE *****************");
-    logger.info(`*************Payload: ${fromDate} *****************`);
-    logger.info(`*************Payload: ${toDate} *****************`);
-    logger.info(`*************Payload: ${userId} *****************`);
+    console.log("************* LOAD ORDER BY DATE *****************");
+    console.log(`*************Payload: ${fromDate} *****************`);
+    console.log(`*************Payload: ${toDate} *****************`);
+    console.log(`*************Payload: ${userId} *****************`);
     let extraCondition;
     if (userId.includes(null) || userId == '') {
         extraCondition = ''
@@ -348,7 +289,7 @@ const fetchOrderByDate = async (req, res) => {
         extraCondition = ` AND o.user_id=${userId}`
     }
     const sqlCom = `SELECT o.*,p.pro_name,c.cus_name FROM user_order o LEFT JOIN product p on o.product_id=p.pro_id LEFT JOIN customer c ON c.cus_id=o.user_id WHERE o.txn_date BETWEEN '${fromDate} 00:00:00' AND '${toDate} 23:59:59' ${extraCondition}  ORDER BY o.order_id DESC`
-    logger.info("sal com: " + sqlCom);
+    console.log("sal com: " + sqlCom);
     Db.query(sqlCom, (er, re) => {
         if (er) return res.send("Error: " + er)
         res.send(re);
@@ -359,17 +300,25 @@ const fetchOrderByDate = async (req, res) => {
 
 const findOrderByPaymentType = async (req, res) => {
     const { paymentCode, fromDate, toDate } = req.query;
-    logger.info("Request query param " + fromDate);
-    logger.info("Request query param " + toDate);
+    console.log("Request query param " + fromDate);
+    console.log("Request query param " + toDate);
     let sqlComOption = `AND c.payment_code IN('${paymentCode}','RIDER_COD')`
     if (paymentCode == 'ALL') {
         // sqlComOption = `AND c.payment_code NOT IN('COD','RIDER_COD')`;
         sqlComOption = ``;
     }
+    // const sqlCom = `SELECT c.name,c.tel,c.source_delivery_branch AS shipping,c.dest_delivery_branch AS cus_address,c.payment_code,u.name AS shop_name,c.shipping_fee_by,
+    // o.order_id,o.user_id,o.product_id,o.product_amount,o.product_price,o.product_discount,o.txn_date,o.locking_session_id,o.rider_fee,o.record_status,o.cancel_reason,
+    // p.pro_name
+    // FROM dynamic_customer c 
+    // LEFT JOIN user_order o ON c.locking_session_id = o.locking_session_id
+    // LEFT JOIN product p on p.pro_id = o.product_id
+    // LEFT JOIN outlet u on u.id = c.shop_name
+    // WHERE c.txn_date BETWEEN '${fromDate} 00:00:00' AND '${toDate} 23:59:59' ${sqlComOption}`
     const sql = `SELECT o.*,p.pro_name FROM user_order o
     LEFT JOIN product p on o.product_id=p.pro_id
      WHERE o.order_id =  '${orderId}' AND o.payment_code NOT IN('COD','RIDER_COD')`
-    logger.info(sqlCom);
+    console.log(sqlCom);
     Db.query(sqlCom, (er, re) => {
         if (er) return res.send("Error: " + er)
         res.send(re);
@@ -379,7 +328,6 @@ const findOrderByPaymentType = async (req, res) => {
 const orderSettlement = async (req, res) => {
     let { lockingSessionId, paymentCode, codFee, orderId, userId, amount } = req.body;
     // TODO: TAKE param for mysql locking session id
-    // return res.send('Try again later');
     const paymentParam = {
         'locking_session_id': lockingSessionId,
         'order_id': orderId,
@@ -388,21 +336,38 @@ const orderSettlement = async (req, res) => {
         'payment_amount': amount,
         'payment_status': 'PAID'
     }
-    logger.info(paymentParam);
+    console.log(paymentParam);
     let sqlCom = `UPDATE dynamic_customer SET cod_fee=${+codFee} WHERE locking_session_id='${lockingSessionId}'`;
     // let sqlCom = 'SELECT * FROM dynamic_customer'
-    logger.info("DYN CUS ",sqlCom);
+    console.log("DYN CUS ",sqlCom);
     try {
         const [rows,fields] = await dbAsync.execute(sqlCom);
-        logger.info('DYN TABLE',rows.affectedRows);
+        console.log('DYN TABLE',rows.affectedRows);
         const response = await createPayment(paymentParam);
         if(response=='00'){
             return res.status(201).send('Transaction completed')
         }
         return res.status(200).send('Transaction fail');
     } catch (error) {
-        logger.error("error: ",error);
+        console.log("error: ",error);
     }
+    // console.log("response 0 "+rows);
+
+
+
+    // if (codFee && +codFee > 0) {
+    //     // ******** create fee for the COD ************//
+    //     sqlCom = `UPDATE user_order SET cod_fee ='${codFee}' WHERE locking_session_id = '${lockingSessionId}'`
+    //     console.log("sql 2 " + sqlCom);
+    //     Db.query(sqlCom, (er, re) => {
+    //         if (er) return res.send('Error: ' + er)
+    //         console.log("Effected: " + re.effectedRows);
+    //         res.send('Transaction completed')
+    //     })
+    // } else {
+    //     res.status(200).send("Transaction completed")
+    // }
+
 
 }
 
@@ -411,16 +376,16 @@ const createPayment = async (param) => {
     const sql = `INSERT INTO order_payment 
     (locking_session_id,order_id,user_id,payment_method,payment_amount,payment_status)
     VALUE('${param.locking_session_id}','${param.order_id}','${param.user_id}','${param.payment_method}','${param.payment_amount}','${param.payment_status}')`
-        logger.info("PAYMENT SQL ",sql);
+        console.log("PAYMENT SQL ",sql);
         try {
             const [rows,fields] =  await dbAsync.query(sql);
-            logger.info('order_payment ',rows.affectedRows);
+            console.log('order_payment ',rows.affectedRows);
             if(rows.affectedRows ==1 ){
                 return '00'
             }
             return '01'
         } catch (error) {
-            logger.error('Server error: ',error)
+            console.log('Server error: ',error)
             return '01'
         }
 
@@ -434,22 +399,22 @@ const multipleStatements = async (req, res) => {
     Db.query(sqlCmd, (er, re, fields) => {
         if (er) throw er
         re.forEach(element => {
-            logger.info("Result: ", element.affectedRows);
-            logger.info("Change: ", element.changedRows);
-            logger.info("message: ", element.message);
-            logger.info("Result: ", element);
+            console.log("Result: ", element.affectedRows);
+            console.log("Change: ", element.changedRows);
+            console.log("message: ", element.message);
+            console.log("Result: ", element);
         });
-        logger.info("Field: ", fields);
+        console.log("Field: ", fields);
         res.send("done")
     })
 }
 const findOrderHeader = async (req, res) => {
     const { fdate, tdate } = req.query;
     const sql = `SELECT * FROM user_order_head WHERE booking_date BETWEEN '${fdate}' AND  '${tdate}'`;
-    logger.info(sql);
+    console.log(sql);
     try {
         const [row, fields] = await dbAsync.query(sql);
-        logger.info("DATA : ", row);
+        console.log("DATA : ", row);
         res.send(row);
     } catch (error) {
         res.send('Server error: ' + error)
@@ -458,53 +423,21 @@ const findOrderHeader = async (req, res) => {
 }
 const findOrderById = async (req, res) => {
     const { orderId } = req.query
-    logger.info("Find order by id");
+    console.log("Find order by id");
     const sql = `SELECT o.*,p.pro_name FROM user_order o
     LEFT JOIN product p on o.product_id=p.pro_id
      WHERE o.order_id =  '${orderId}'`;
-    logger.info(sql);
+    console.log(sql);
     try {
         const [row, fields] = await dbAsync.query(sql);
         let fieldsName = []
         fields.forEach(el => {
             fieldsName.push(el.name)
-            logger.info("DATA : ", el.name,);
+            console.log("DATA : ", el.name,);
         })
         res.send({ row, fieldsName });
     } catch (error) {
-        logger.error(error)
         res.send('Server error: ' + error)
-    }
-}
-const findCancelOrder=async(req,res)=>{
-    const {fDate,tDate} = req.query;
-    const sql = `SELECT d.*,o.order_id,o.cancel_reason,SUM(o.order_price_total) AS cart_total FROM dynamic_customer d 
-    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id
-    WHERE d.record_status != 1 AND d.txn_date BETWEEN '${fDate} 00:00:00' AND '${tDate} 23:59:59'
-    GROUP BY d.locking_session_id
-    `
-    logger.info(sql)
-    const userOrder =`SELECT locking_session_id,record_status,order_id FROM user_order`
-    try {
-        const [rows,fields] = await dbAsync.query(sql);
-        
-        // rows.forEach(el=>{
-        //     logger.info("Field name: "+el.locking_session_id);
-        //     Db.query(`UPDATE dynamic_customer SET record_status=${el.record_status} WHERE locking_session_id = '${el.locking_session_id}'`,(er,re)=>{
-        //         if(er){
-        //             logger.error('cannot update '+er)
-        //         }else{
-        //             logger.info("Update completed")
-        //         }
-        //     })
-        // })
-        logger.error('Row counted: '+rows.length)
-        return res.status(200).send(rows)
-
-        
-    } catch (error) {
-        logger.error('Database error ',error)
-        return res.status(201).send("Server error "+error)
     }
 }
 
@@ -521,6 +454,5 @@ module.exports = {
     changeOrderStatus,
     multipleStatements,
     findOrderHeader,
-    findOrderById,
-    findCancelOrder,
+    findOrderById
 }

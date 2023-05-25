@@ -1,8 +1,8 @@
 require('dotenv').config()
 const express = require("express");
 const cors = require("cors");
-const Router = require('./router')
-const myRouter = require("../router")
+const Router = require('./router/router')
+const myRouter = require("./router")
 const buildApp = async () => {
     const app = express();
     app.use(cors());
@@ -12,7 +12,13 @@ const buildApp = async () => {
     app.get("/hello", (req, res) => {
         res.send("Succeed server is ready")
     })
+    app.use("/api",myRouter.dymCustomerRouter)
     app.use("/api",myRouter.orderRouter);
+    app.use("/api",myRouter.reportRouter);
+    app.use("/api/financial",myRouter.generalLedger)
+    app.use("/api/financial",myRouter.chartAccount)
+    app.use("/api/upgrade",myRouter.upgrade)
+
     Router.category(app);
     Router.product(app);
     Router.sale(app);

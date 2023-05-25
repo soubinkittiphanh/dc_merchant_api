@@ -1,4 +1,4 @@
-
+// TODO: MANAGE THIS CODE
 const CategoryCtr = require('../controllers/admin/category')
 const ProdCtr = require('../controllers/admin/product')
 const Sale = require('../controllers/admin/sale')
@@ -28,6 +28,7 @@ const RegisterCustomer=require('../controllers/client/register')
 const Report=require("../controllers/admin/report")
 const multer = require('multer')
 const tokenHook=require('../middleware/auth').validateToken;
+const jwtUtil =require('../middleware/auth');
 const Outlet = require("../controllers/admin/outlet")
 const Payment = require("../controllers/admin/payment");
 const Shipping = require("../controllers/admin/shipping");
@@ -101,7 +102,10 @@ const authenticate = async (app) => {
     app.post('/cus_auth', Auth.Authcustomer)
 }
 const login = async (app) => {
-    app.get('/login', Login.login)
+    app.get('/login', Login.login),
+    app.get('/logout', jwtUtil.deleteToken),
+    app.get('/me',jwtUtil.getUserFromToken)
+
 }
 const userorder=async (app)=>{
     // app.post('/order_i',tokenHook,OrderUser.createOrder)
@@ -184,20 +188,6 @@ const walletTxn=async(app)=>{
 }
 const report=async(app)=>{
     app.get('/report_txn',Report.txnReport);
-}
-function authentication(req, res, next) {
-    console.log("Middleware");
-    const authHeader = req.headers['authorization']
-    console.log("Middleware header: "+authHeader);
-    const token = authHeader && authHeader.split(' ')[1]
-    console.log("Middleware: "+token);
-    if (token == null) return res.sendStatus(401).send('Invalid token null')
-    jwt.verify(token, Token.actksecret, (er, user) => {
-        if (er) return res.send('Token invalid or expired!').status(403)//res.sendStatus(403).send('invalid')
-        console.log(user);
-        req.user = user;
-        next()
-    })
 }
 const outlet = async(app)=>{
     app.get("/outlet",Outlet.getOutletList)

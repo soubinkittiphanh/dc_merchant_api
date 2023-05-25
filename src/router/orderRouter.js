@@ -13,5 +13,8 @@ router.use(validateToken)
 router.get("/findByUserId",orderController.findOrderByUserId)
 .put("/changeOrderStatus",orderController.changeOrderStatus)
 .post("/test_multi",orderController.multipleStatements)
+.get('/findOrderHeaderByBookingDate',orderController.findOrderHeader)
+.get('/findOrderById',orderController.findOrderById)
+.get('/findCancelOrderByDate',orderController.findCancelOrder)
 
 module.exports = router;

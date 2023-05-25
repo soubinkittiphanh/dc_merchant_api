@@ -1,0 +1,1 @@
+INSERT INTO user_order_head(id, user_order_id, discount, cod_fee, rider_fee, dy_cus) VALUES ('${}','${}','${}','${}','${}','${}')

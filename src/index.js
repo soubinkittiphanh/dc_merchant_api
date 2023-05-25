@@ -1,5 +1,5 @@
 console.log("Hello welcome to online stores");
-const buildApp =require("./models/app.js");
+const buildApp =require("./app.js");
 const env=require("./config");
 const startApp=async()=>{
 
