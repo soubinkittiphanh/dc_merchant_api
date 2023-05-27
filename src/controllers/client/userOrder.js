@@ -216,7 +216,8 @@ const findOrderByUserId = async (req, res) => {
     const fDate = req.query.f_date;
     const tDate = req.query.t_date;
     const sqlCom = `
-    SELECT o.*,d.*,p.pro_name,p.outlet,p.name as outlet_name,p.tel as shop_tel,
+    SELECT o.order_id,o.user_id,o.product_id,o.product_amount,o.product_price,o.order_price_total,o.record_status,o.cancel_reason,
+    d.*,p.pro_name,p.outlet,p.name as outlet_name,p.tel as shop_tel,
     s.name as record_status,s.description as record_status_desc 
     FROM user_order o
     LEFT JOIN (SELECT p.pro_id, p.pro_name,p.outlet,u.name,u.tel 
