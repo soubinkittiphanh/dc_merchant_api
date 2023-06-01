@@ -359,7 +359,7 @@ const fetchOrderByDate = async (req, res) => {
 
 
 const findOrderByPaymentType = async (req, res) => {
-    const { paymentCode, fromDate, toDate } = req.query;
+    const { paymentCode, fromDate, toDate,orderId } = req.query;
     logger.info("Request query param " + fromDate);
     logger.info("Request query param " + toDate);
     let sqlComOption = `AND c.payment_code IN('${paymentCode}','RIDER_COD')`

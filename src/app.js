@@ -18,6 +18,7 @@ const buildApp = async () => {
     app.use("/api/financial",myRouter.generalLedger)
     app.use("/api/financial",myRouter.chartAccount)
     app.use("/api/upgrade",myRouter.upgrade)
+    app.use("/api/rider",myRouter.rider)
 
     Router.category(app);
     Router.product(app);

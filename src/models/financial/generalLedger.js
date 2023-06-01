@@ -1,4 +1,5 @@
 const logger = require("../../api/logger");
+
 module.exports = (sequelize, DataTypes) => {
     const GeneralLedger = sequelize.define('general_ledger', {
         // Model attributes are defined here
@@ -7,6 +8,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             // unique: true
         },
+        // accountNumber: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'chart_of_account',
+        //         key: 'accountNumber'
+        //     },
+        // },
         bookingDate: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -54,9 +62,17 @@ module.exports = (sequelize, DataTypes) => {
         // I don't want createdAt
         createdAt: true,
         // I want updatedAt to actually be called updateTimestamp
-        updatedAt: 'updateTimestamp'
+        updatedAt: 'updateTimestamp',
+        // disable the modification of tablenames; By default, sequelize will automatically
+        // transform all passed model names (first parameter of define) into plural.
+        // if you don't want that, set the following
+        freezeTableName: true,
     })
-    logger.info(GeneralLedger === sequelize.models.GeneralLedger); // true
+
+    // const Account = require("./chartOfAccount")(sequelize, DataTypes)
+    // GeneralLedger.belongsTo(Account)
+    // Account.hasMany(GeneralLedger)
+
     return GeneralLedger;
 };
 

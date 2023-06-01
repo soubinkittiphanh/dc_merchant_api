@@ -10,7 +10,7 @@ const config={
         password:'SDAT@3480',
         // database:'peeair_demo',
         // database:'dcommerce_uat',
-        database:'dcommerce_production',
+        database:'dcommerce_uat',
         port: 34248,
     }
 }

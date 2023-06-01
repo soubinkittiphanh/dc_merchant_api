@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const ChartOfAccounts = sequelize.define('ChartOfAccounts', {
+    const ChartOfAccount = sequelize.define('chart_of_account', {
         accountNumber: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: true,
-          }
+        }
     }, {
         sequelize,
 
@@ -32,7 +32,11 @@ module.exports = (sequelize, DataTypes) => {
         createdAt: true,
 
         // I want updatedAt to actually be called updateTimestamp
-        updatedAt: 'updateTimestamp'
+        updatedAt: 'updateTimestamp',
+        // disable the modification of tablenames; By default, sequelize will automatically
+        // transform all passed model names (first parameter of define) into plural.
+        // if you don't want that, set the following
+        freezeTableName: true,
     });
-    return ChartOfAccounts
+    return ChartOfAccount
 }

@@ -26,8 +26,9 @@ sequelize.authenticate().then(()=>{
 const db={}
 db.sequelize = sequelize;
 db.Sequelize = Sequelize
-db.gl = require("./generalLedger")(sequelize,DataTypes);
 db.chartAccount =  require("./chartOfAccount")(sequelize,DataTypes);
+db.gl = require("./generalLedger")(sequelize,DataTypes);
+db.rider = require("../../controllers/admin/rider/model")(sequelize,DataTypes);
 db.sequelize.sync({force:false,alter: true}).then(()=>{
     logger.info("Datatase is synchronize")
 })

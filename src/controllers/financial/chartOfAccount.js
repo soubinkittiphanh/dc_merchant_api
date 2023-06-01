@@ -29,20 +29,26 @@ const ChartOfAccounts = require("../../models/financial").chartAccount
 
 
 // Create a new account
-const createAccount = async (accountData) => {
+const createAccount = async (req, res) => {
+  const accountData = req.body
+  logger.info(accountData)
   try {
     const account = await ChartOfAccounts.create(accountData);
-    return account;
+    return res.status(200).send(account);
   } catch (error) {
-    console.error(error);
+    logger.error(error);
+    res.send("Server error " + error)
     throw new Error('Failed to create account');
   }
 };
 
 // Get all accounts
-const getAccounts = async (req,res) => {
+const getAccounts = async (req, res) => {
   try {
-    const accounts = await ChartOfAccounts.findAll();
+    const accounts = await ChartOfAccounts.findAll({
+      order: [['accountNumber', 'DESC'],],
+      where:{isActive:true}
+    });
     return res.status(200).send(accounts);
   } catch (error) {
     console.error(error);
@@ -51,9 +57,9 @@ const getAccounts = async (req,res) => {
 };
 
 // Get an account by ID
-const getAccountById = async (req,res) => {
-    const accountId = req.params.id
-    logger.info("Account id "+accountId)
+const getAccountById = async (req, res) => {
+  const accountId = req.params.id
+  logger.info("Account id " + accountId)
   try {
     const account = await ChartOfAccounts.findByPk(accountId);
     if (!account) {
@@ -68,9 +74,9 @@ const getAccountById = async (req,res) => {
 };
 
 // Update an account by ID
-const updateAccountById = async (req,res) => {
-const accountId = req.params.id
-const {accountData} = req.body
+const updateAccountById = async (req, res) => {
+  const accountId = req.params.id
+  const { accountData } = req.body
   try {
     const account = await ChartOfAccounts.findByPk(accountId);
     if (!account) {
@@ -86,18 +92,18 @@ const {accountData} = req.body
 };
 
 // Delete an account by ID
-const deleteAccountById = async (req,res) => {
-    const accountId = req.body
+const deleteAccountById = async (req, res) => {
+  const accountId = req.body
   try {
     const account = await ChartOfAccounts.findByPk(accountId);
     if (!account) {
       throw new Error('Account not found');
     }
     await account.destroy();
-    return res.status(200).send('Account '+account+' has been deleted');
+    return res.status(200).send('Account ' + account + ' has been deleted');
   } catch (error) {
     console.error(error);
-    res.status(201).send("Server error "+error)
+    res.status(201).send("Server error " + error)
     throw new Error('Failed to delete account');
   }
 };

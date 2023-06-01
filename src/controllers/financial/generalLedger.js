@@ -1,5 +1,6 @@
 const logger = require("../../api/logger")
 const db = require("../../models/financial").gl
+const Account = require("../../models/financial").chartAccount
 const {validationResult} = require('express-validator')
 const generateGL = (req, res) => {
     logger.info("***************** GENERATE GL ****************")
@@ -32,26 +33,23 @@ const generateGL = (req, res) => {
 
 }
 
-const create = (req, res) => {
-    // const error = validationResult(req)
-    // if(!error.isEmpty()){
-    //     return res.status(422).json({erors:error.array()})
-    // }
-    // const { accountNumber, accountName } = req.body
-    // const element = { accountNumber, accountName }
+const create = async(req, res) => {
+    const error = validationResult(req)
+    if(!error.isEmpty()){
+        return res.status(422).json({erors:error.array()})
+    }
+    logger.info("Transaction => "+req.body.accountNumber)
     const txn = req.body;
-    // const txn = {
-    //     accountNumber: 3001,
-    //     bookingDate: new Date(),
-    //     postingReference: 'REF-001 N/A',
-    //     debit: 14625000.00,
-    //     credit: 0.00,
-    //     description: 'Investment',
-    //     descriptionLL: 'ລົງທຶນ ຊື້ ເຄື່ອງມາຂາຍ ແບ້ 40 ຕຸ້ຍ 30 ໂອບີ 30',
-    //     currency: 'LAK',
-    //     rate: 1,
-    //     source: 'GL',
-    //   }
+    logger.info("Account number "+txn.accountNumber)
+    const account = await Account.findOne({where:{
+        accountNumber:txn.accountNumber
+    }})
+    // return res.send(account)
+    // txn.accountNumber = account
+    txn.credit = parseFloat(txn.credit.toString().replace(/,/g,""))
+    txn.debit = parseFloat(txn.debit.toString().replace(/,/g,""))
+    logger.info("DR "+txn.debit)
+    logger.info("CR "+txn.credit)
     db.create(txn).then(re => {
         logger.info("Transaction complete")
         res.status(200).send(re)
@@ -75,9 +73,27 @@ const update =async (req, res) =>{
     res.send (updateGL);
 
 }
+const deleteGLById = async (req,res) => {
+    const {id} = req.params
+    logger.info("===> id "+id)
+  try {
+    const gl = await db.findByPk(id);
+    if (!gl) {
+      throw new Error('Account not found');
+    }
+    await gl.destroy();
+    return res.status(200).send('Account '+gl+' has been deleted');
+  } catch (error) {
+    console.error(error);
+    res.status(201).send("Server error "+error)
+    throw new Error('Failed to delete account');
+  }
+};
 const findAll = async (req, res) => {
     logger.info("********* find all user *********")
-    res.send(await db.findAll());
+    res.send(await db.findAll({
+        include: Account
+      }));
 
 }
 
@@ -85,5 +101,6 @@ module.exports = {
     generateGL,
     findAll,
     create,
-    update
+    update,
+    deleteGLById
 }

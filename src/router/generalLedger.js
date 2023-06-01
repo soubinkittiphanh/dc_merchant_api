@@ -10,18 +10,39 @@ router.use((req,res,next)=>{
 })
 
 
+const validateTransaction = [
+  body('accountNumber').exists().isInt(),
+  body('bookingDate').exists().isISO8601(),
+  body('postingReference').exists().isString(),
+  body('debit').exists().isNumeric(),
+  body('credit').exists().isNumeric(),
+  body('description').exists().isString(),
+  body('descriptionLL').exists().isString(),
+  body('currency').exists().isString(),
+  body('rate').exists().isNumeric(),
+  body('source').exists().isString()
+];
+
+    // const txn = {
+    //     accountNumber: 3001,
+    //     bookingDate: new Date(),
+    //     postingReference: 'REF-001 N/A',
+    //     debit: 14625000.00,
+    //     credit: 0.00,
+    //     description: 'Investment',
+    //     descriptionLL: 'ລົງທຶນ ຊື້ ເຄື່ອງມາຂາຍ ແບ້ 40 ຕຸ້ຍ 30 ໂອບີ 30',
+    //     currency: 'LAK',
+    //     rate: 1,
+    //     source: 'GL',
+    //   }
 const createValidation = [
 body('accountNumber').notEmpty().withMessage('accountNumber is required'),
-body("accountName").notEmpty().withMessage("Account name is require"),
-check('accountNumber').custom((value) => {
-    if (!value) {
-        throw new Error('accountNumber is required');
-      }
-    if (!validator.isNumeric(value)) {
-      throw new Error('accountNumber type is number');
-    }
-    return true;
-  })
+body('bookingDate').notEmpty().withMessage('booking date is required'),
+body('postingReference').notEmpty().withMessage('reference  is required'),
+body('description').notEmpty().withMessage('descrition is required'),
+body('source').notEmpty().withMessage('posting source is required'),
+body('debit').notEmpty().withMessage('debit amount is required'),
+body('credit').notEmpty().withMessage('credit amount is required'),
 ]
 
 const updateValidation = [
@@ -33,6 +54,7 @@ router
 .get("/find",controller.findAll)
 .post("/create",createValidation,controller.create)
 .put("/update",updateValidation,controller.update)
+.delete("/delete/:id",controller.deleteGLById)
 
 
 
