@@ -280,11 +280,12 @@ const returnStock = async(orderId)=>{
     try {
         logger.info("Update card table")
         const [rows,fields] = await dbAsync.query(sql);
-        logger.info(rows.message)
-        logger.info(rows.changedRows)
+        logger.info("update card table rows message: "+rows.message)
+        logger.info("update card table rows change: "+rows.changedRows)
         if (rows.changedRows>0) return await deleteCardFromCardSale(orderId)
         return '01'
     } catch (error) {
+        logger.warn(`update card table error ${error}`)
         logger.error("Database error: ",error);
         return '01'
     }
