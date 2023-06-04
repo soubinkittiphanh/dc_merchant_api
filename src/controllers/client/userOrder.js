@@ -268,7 +268,7 @@ const changeOrderStatus = async (req, res) => {
         logger.info("Number of rows changedRows : " + re.changedRows);
       const response =  await returnStock(orderId)
       if(response.includes('00')) return res.status("200").send("Transaction completed");
-      return res.status('201').send(`Transaction fail, contact admin to check order ${orderId} stock return`)
+      return res.status('201').send(`Transaction fail, contact admin to check order ${orderId} n`)
         
     })
 }
@@ -278,7 +278,10 @@ const changeOrderStatus = async (req, res) => {
 const returnStock = async(orderId)=>{
     const sql = `UPDATE card SET card_isused = 0 WHERE card_number IN(SELECT card_code FROM card_sale WHERE card_order_id ='${orderId}')`
     try {
+        logger.info("Update card table")
         const [rows,fields] = await dbAsync.query(sql);
+        logger.info(rows.message)
+        logger.info(rows.changedRows)
         if (rows.changedRows>0) return await deleteCardFromCardSale(orderId)
         return '01'
     } catch (error) {
@@ -290,7 +293,10 @@ const returnStock = async(orderId)=>{
 const deleteCardFromCardSale = async(orderId)=>{
     const sql =`DELETE FROM card_sale WHERE card_order_id ='${orderId}'`
     try {
+        logger.info("Delete card from card_sale table")
         const [rows,fields] = await dbAsync.query(sql)
+        logger.info(rows.message)
+        logger.info(rows.changedRows)
         if(rows.affectedRows>0) return '00'
         return '01'
     } catch (error) {
