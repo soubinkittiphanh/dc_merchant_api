@@ -296,8 +296,9 @@ const deleteCardFromCardSale = async(orderId)=>{
     try {
         logger.info("Delete card from card_sale table")
         const [rows,fields] = await dbAsync.query(sql)
-        logger.info(rows.message)
-        logger.info(rows.changedRows)
+        logger.info(`change: ${rows.changedRows}`)
+        logger.info(`effected: ${rows.affectedRows}`)
+        logger.info(`message: ${rows.message}`)
         if(rows.affectedRows>0) return '00'
         return '01'
     } catch (error) {
