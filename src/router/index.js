@@ -5,6 +5,8 @@ const generalLedger = require("./generalLedger")
 const chartAccount = require("./chartOfAccount")
 const upgrade = require("./upgrade")
 const rider = require("../controllers/admin/rider").router
+const campaign = require("../controllers/admin/campaign").router
+const campaignEntry = require("../controllers/admin/campaign/entry").router
 module.exports={
     orderRouter,
     dymCustomerRouter,
@@ -12,5 +14,7 @@ module.exports={
     generalLedger,
     chartAccount,
     upgrade,
-    rider
+    rider,
+    campaign,
+    campaignEntry
 }
