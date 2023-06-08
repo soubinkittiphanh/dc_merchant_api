@@ -339,17 +339,17 @@ const orderSettlement = async (req, res) => {
     console.log(paymentParam);
     let sqlCom = `UPDATE dynamic_customer SET cod_fee=${+codFee} WHERE locking_session_id='${lockingSessionId}'`;
     // let sqlCom = 'SELECT * FROM dynamic_customer'
-    console.log("DYN CUS ",sqlCom);
+    console.log("DYN CUS ", sqlCom);
     try {
-        const [rows,fields] = await dbAsync.execute(sqlCom);
-        console.log('DYN TABLE',rows.affectedRows);
+        const [rows, fields] = await dbAsync.execute(sqlCom);
+        console.log('DYN TABLE', rows.affectedRows);
         const response = await createPayment(paymentParam);
-        if(response=='00'){
+        if (response == '00') {
             return res.status(201).send('Transaction completed')
         }
         return res.status(200).send('Transaction fail');
     } catch (error) {
-        console.log("error: ",error);
+        console.log("error: ", error);
     }
     // console.log("response 0 "+rows);
 
@@ -372,22 +372,22 @@ const orderSettlement = async (req, res) => {
 }
 
 const createPayment = async (param) => {
-    
+
     const sql = `INSERT INTO order_payment 
     (locking_session_id,order_id,user_id,payment_method,payment_amount,payment_status)
     VALUE('${param.locking_session_id}','${param.order_id}','${param.user_id}','${param.payment_method}','${param.payment_amount}','${param.payment_status}')`
-        console.log("PAYMENT SQL ",sql);
-        try {
-            const [rows,fields] =  await dbAsync.query(sql);
-            console.log('order_payment ',rows.affectedRows);
-            if(rows.affectedRows ==1 ){
-                return '00'
-            }
-            return '01'
-        } catch (error) {
-            console.log('Server error: ',error)
-            return '01'
+    console.log("PAYMENT SQL ", sql);
+    try {
+        const [rows, fields] = await dbAsync.query(sql);
+        console.log('order_payment ', rows.affectedRows);
+        if (rows.affectedRows == 1) {
+            return '00'
         }
+        return '01'
+    } catch (error) {
+        console.log('Server error: ', error)
+        return '01'
+    }
 
 }
 
