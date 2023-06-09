@@ -1,4 +1,5 @@
-console.log("Hello welcome to online stores");
+
+const logger = require("./api/logger.js");
 const buildApp =require("./app.js");
 const env=require("./config");
 const startApp=async()=>{
@@ -6,9 +7,9 @@ const startApp=async()=>{
     const app = await buildApp();
     
     app.listen(env.port || 4000,()=>{
-
-        console.log("app is runing: "+env.port || 4000);
-        console.log("env: "+env.db.database);
+        logger.info("Dcommerce is up")
+        logger.info("app is runing: "+env.port || 4000);
+        logger.warn("env: "+env.db.database);
 
     }).setTimeout(0)
    
