@@ -238,6 +238,11 @@ const changeOrderStatus = async (req, res) => {
     let processResList = [];
     let tempResponse;
     const { orderId, status, userId, reason } = req.body;
+    logger.info(orderId)
+    logger.info(status)
+    logger.info(userId)
+    logger.info(reason)
+    // return res.status(200).send("complete");
     const sqlCmd = `UPDATE user_order set record_status = ${status}, cancel_reason='${reason}' WHERE order_id = '${orderId}'`
     logger.info("sqlCommand: ", sqlCmd);
     // ************ Change record_status from dynamic_customer table ************

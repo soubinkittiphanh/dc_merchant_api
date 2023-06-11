@@ -21,6 +21,7 @@ const buildApp = async () => {
     app.use("/api/rider",myRouter.rider)
     app.use("/api/campaign",myRouter.campaign)
     app.use("/api/campaignEntry",myRouter.campaignEntry)
+    app.use("/api/card",myRouter.card)
 
     Router.category(app);
     Router.product(app);

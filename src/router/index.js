@@ -7,6 +7,7 @@ const upgrade = require("./upgrade")
 const rider = require("../controllers/admin/rider").router
 const campaign = require("../controllers/admin/campaign").router
 const campaignEntry = require("../controllers/admin/campaign/entry").router
+const card = require("../card").router
 module.exports={
     orderRouter,
     dymCustomerRouter,
@@ -16,5 +17,6 @@ module.exports={
     upgrade,
     rider,
     campaign,
-    campaignEntry
+    campaignEntry,
+    card,
 }

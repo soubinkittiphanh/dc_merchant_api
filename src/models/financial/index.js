@@ -31,6 +31,7 @@ db.gl = require("./generalLedger")(sequelize,DataTypes);
 db.rider = require("../../controllers/admin/rider/model")(sequelize,DataTypes);
 db.campaign = require("../../controllers/admin/campaign/model")(sequelize,DataTypes);
 db.campaignEntry = require("../../controllers/admin/campaign/entry/model")(sequelize,DataTypes);
+db.card = require("../../card/model")(sequelize,DataTypes);
 db.sequelize.sync({force:false,alter: true}).then(()=>{
     logger.info("Datatase is synchronize")
 })
