@@ -1,6 +1,6 @@
 
-const Campaign = require('../../../models/financial').campaign;
-const CampaignEntry = require('../../../models/financial').campaignEntry;
+const Campaign = require('../../../models').campaign;
+const CampaignEntry = require('../../../models').campaignEntry;
 const entryController =  require("./entry/controller")
 const { body, validationResult } = require('express-validator');
 

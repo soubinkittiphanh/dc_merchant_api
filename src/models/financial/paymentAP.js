@@ -1,5 +1,5 @@
 
-const logger = require("../../api/logger");
+
 module.exports = (sequelize, DataTypes) => {
   const PaymentAP = sequelize.define('payment_ap', {
     // Model attributes are defined here

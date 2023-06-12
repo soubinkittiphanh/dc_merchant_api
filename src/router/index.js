@@ -8,6 +8,7 @@ const rider = require("../controllers/admin/rider").router
 const campaign = require("../controllers/admin/campaign").router
 const campaignEntry = require("../controllers/admin/campaign/entry").router
 const card = require("../card").router
+const paymentHeadAP = require("../AP/payment/header").router
 module.exports={
     orderRouter,
     dymCustomerRouter,
@@ -19,4 +20,5 @@ module.exports={
     campaign,
     campaignEntry,
     card,
+    paymentHeadAP,
 }

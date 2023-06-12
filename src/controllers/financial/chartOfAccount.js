@@ -1,6 +1,6 @@
 const logger = require("../../api/logger");
 
-const ChartOfAccounts = require("../../models/financial").chartAccount
+const ChartOfAccounts = require("../../models").chartAccount
 // const create = async (req, res) => {
 
 //     const txn = req.body
@@ -47,7 +47,7 @@ const getAccounts = async (req, res) => {
   try {
     const accounts = await ChartOfAccounts.findAll({
       order: [['accountNumber', 'DESC'],],
-      where:{isActive:true}
+      where:{isActive:true},
     });
     return res.status(200).send(accounts);
   } catch (error) {

@@ -1,5 +1,5 @@
 
-const Card = require("../models/financial").card; // Import the users model
+const Card = require("../models").card; // Import the users model
 
 const cardController = {
   // Create a new card

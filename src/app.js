@@ -22,6 +22,7 @@ const buildApp = async () => {
     app.use("/api/campaign",myRouter.campaign)
     app.use("/api/campaignEntry",myRouter.campaignEntry)
     app.use("/api/card",myRouter.card)
+    app.use("/api/finanicial/ap/header",myRouter.paymentHeadAP)
 
     Router.category(app);
     Router.product(app);

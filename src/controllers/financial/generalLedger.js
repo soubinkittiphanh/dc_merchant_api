@@ -1,6 +1,6 @@
 const logger = require("../../api/logger")
-const db = require("../../models/financial").gl
-const Account = require("../../models/financial").chartAccount
+const db = require("../../models").gl
+const Account = require("../../models").chartAccount
 const {validationResult} = require('express-validator')
 const generateGL = (req, res) => {
     logger.info("***************** GENERATE GL ****************")

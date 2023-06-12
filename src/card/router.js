@@ -15,4 +15,5 @@ router.post("/create", controller.create)
     .get("/find", controller.getAll)
     .get("/find/:id", controller.getById)
     .post("/bulkCreate",service.createHulkStockCard)
+    .post("/rebuildStock",service.rebuildStockValue)
 module.exports = router

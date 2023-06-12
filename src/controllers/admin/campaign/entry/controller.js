@@ -2,7 +2,7 @@
 
 
 
-const  CampaignEntry = require('../../../../models/financial').campaignEntry;
+const  CampaignEntry = require('../../../../models').campaignEntry;
 const { body, validationResult } = require('express-validator');
 // Get all campaign entries
 
