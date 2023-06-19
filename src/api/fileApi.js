@@ -2,7 +2,7 @@ const fileUpload = require('express-fileupload');
 
 const uploadFile = (file) => {
     const response = {
-        mti: 00,
+        mti: '00',
         message: ''
     }
     if (!file || Object.keys(file).length === 0) {

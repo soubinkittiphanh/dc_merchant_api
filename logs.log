@@ -6902,3 +6902,524 @@
 {"level":"warn","message":"****** Rebuild stock is on going ******","timestamp":"2023-06-12T11:48:41.455Z"}
 {"level":"info","message":"************* updateProductStockCountDirect **************","timestamp":"2023-06-12T11:48:41.456Z"}
 {"level":"info","message":"*********** Mon Jun 12 2023 18:48:41 GMT+0700 (Indochina Time) PROCESSED RECORD: 15","timestamp":"2023-06-12T11:48:41.804Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-16T13:05:14.160Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-16T13:05:14.163Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-16T13:05:14.164Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-16T13:05:14.165Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-16T13:05:14.167Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-16T13:05:14.972Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-16T13:05:14.974Z"}
+{"level":"warn","message":"env: dcommerce_production","timestamp":"2023-06-16T13:05:14.974Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-16T13:05:19.796Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-16T13:05:24.502Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-16T13:05:24.505Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-16T13:05:24.506Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-16T13:05:24.507Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-16T13:05:24.509Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-16T13:05:25.274Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-16T13:05:25.276Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-16T13:05:25.276Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-16T13:05:29.091Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-16T13:06:15.410Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-16T13:08:21.411Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-16T13:08:21.417Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-16T13:08:21.419Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-16T13:08:21.421Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-16T13:08:21.426Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-16T13:08:23.050Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-16T13:08:23.053Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-16T13:08:23.053Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-16T13:08:27.706Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-16T13:09:12.419Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-16T13:22:16.542Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-16T13:22:16.546Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-16T13:22:16.547Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-16T13:22:16.548Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-16T13:22:16.550Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-16T13:22:17.622Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-16T13:22:17.623Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-16T13:22:17.623Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-16T13:22:21.654Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-16T13:23:10.297Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-16T13:24:04.659Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-16T13:26:29.326Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-16T13:26:29.330Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-16T13:26:29.331Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-16T13:26:29.333Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-16T13:26:29.335Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-16T13:26:30.325Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-16T13:26:30.327Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-16T13:26:30.328Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-16T13:26:34.774Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-16T13:27:19.742Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-16T13:27:31.810Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-16T13:34:55.039Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-16T13:34:55.045Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-16T13:34:55.047Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-16T13:34:55.048Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-16T13:34:55.052Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-16T13:34:57.918Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-16T13:34:57.921Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-16T13:34:57.921Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-16T13:35:02.030Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-16T13:35:45.340Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-16T13:36:17.904Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-16T13:36:17.910Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-16T13:36:17.913Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-16T13:36:17.914Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-16T13:36:17.917Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-16T13:36:19.129Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-16T13:36:19.130Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-16T13:36:19.130Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-16T13:36:23.118Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-16T13:37:04.475Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-17T08:19:42.897Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-17T08:19:44.653Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-17T08:19:45.064Z"}
+{"level":"info","message":"Record count => 28","timestamp":"2023-06-17T08:19:45.430Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-17T08:19:45.432Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-17T13:22:18.237Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-17T13:22:18.239Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-17T13:22:18.240Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-17T13:22:18.241Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-17T13:22:18.242Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-17T13:22:18.802Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-17T13:22:18.803Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-17T13:22:18.803Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-17T13:22:21.416Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-17T13:22:52.406Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T08:23:04.357Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T08:23:04.359Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T08:23:04.360Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T08:23:04.361Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T08:23:04.362Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T08:23:04.970Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T08:23:04.971Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T08:23:04.971Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T08:23:09.685Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T08:23:56.752Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T08:27:22.121Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T08:27:22.124Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T08:27:22.125Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T08:27:22.125Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T08:27:22.126Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T08:27:22.716Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T08:27:22.717Z"}
+{"level":"warn","message":"env: dcommerce_uat","timestamp":"2023-06-18T08:27:22.717Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T08:27:27.904Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T08:27:30.066Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T08:27:30.068Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T08:27:30.069Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T08:27:30.069Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T08:27:30.071Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T08:27:30.618Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T08:27:30.619Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-18T08:27:30.619Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T08:27:35.696Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T08:28:18.392Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T08:28:18.394Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T08:28:18.394Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T08:28:18.395Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T08:28:18.396Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T08:28:18.938Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T08:28:18.939Z"}
+{"level":"warn","message":"env: dcommerce_uat","timestamp":"2023-06-18T08:28:18.939Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T08:28:23.378Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T08:28:40.022Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T08:28:40.024Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T08:28:40.024Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T08:28:40.025Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T08:28:40.026Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T08:28:40.499Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T08:28:40.500Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T08:28:40.500Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T08:28:44.914Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T08:29:42.281Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T08:29:42.283Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T08:29:42.283Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T08:29:42.284Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T08:29:42.285Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T08:29:42.861Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T08:29:42.862Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T08:29:42.862Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T08:29:47.791Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T08:30:35.518Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-18T08:45:41.986Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T09:12:00.637Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T09:12:00.641Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T09:12:00.643Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T09:12:00.645Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T09:12:00.647Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T09:12:01.463Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T09:12:01.464Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T09:12:01.464Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T09:12:06.264Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T09:12:53.742Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-18T09:39:06.065Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-18T09:40:21.017Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T09:42:18.559Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T09:42:18.561Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T09:42:18.561Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T09:42:18.562Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T09:42:18.564Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T09:42:19.173Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T09:42:19.174Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T09:42:19.174Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T09:42:24.218Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T09:43:16.043Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T09:46:13.531Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T09:46:13.533Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T09:46:13.534Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T09:46:13.535Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T09:46:13.536Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T09:46:14.081Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T09:46:14.082Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T09:46:14.082Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T09:46:19.565Z"}
+{"level":"error","message":"Error inserting rows: (conn=576619, no: 1366, SQLState: 22007) Incorrect integer value: '[object SequelizeInstance:campaign]' for column `dcommerce_jack42_production`.`campaignEntry`.`campaignId` at row 1\nsql: INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','20','30','40','50','60',true,'2023-06-18 09:47:13.202','2023-06-18 09:47:13.202','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]'); - parameters:[]","name":"SequelizeDatabaseError","original":{"code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","errno":1366,"fatal":false,"name":"SqlError","sql":"INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','20','30','40','50','60',true,'2023-06-18 09:47:13.202','2023-06-18 09:47:13.202','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]');","sqlState":"22007","text":"Incorrect integer value: '[object SequelizeInstance:campaign]' for column `dcommerce_jack42_production`.`campaignEntry`.`campaignId` at row 1"},"parameters":{},"parent":{"code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","errno":1366,"fatal":false,"name":"SqlError","sql":"INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','20','30','40','50','60',true,'2023-06-18 09:47:13.202','2023-06-18 09:47:13.202','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]');","sqlState":"22007","text":"Incorrect integer value: '[object SequelizeInstance:campaign]' for column `dcommerce_jack42_production`.`campaignEntry`.`campaignId` at row 1"},"sql":"INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','20','30','40','50','60',true,'2023-06-18 09:47:13.202','2023-06-18 09:47:13.202','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]');","stack":"Error\n    at Query.run (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)\n    at /Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/sequelize.js:315:28\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async MySQLQueryInterface.bulkInsert (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/abstract/query-interface.js:346:21)\n    at async recursiveBulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1697:25)\n    at async Function.bulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1786:12)","timestamp":"2023-06-18T09:47:13.602Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T09:47:13.618Z"}
+{"level":"error","message":"Error inserting rows: (conn=576618, no: 1366, SQLState: 22007) Incorrect integer value: '[object SequelizeInstance:campaign]' for column `dcommerce_jack42_production`.`campaignEntry`.`campaignId` at row 1\nsql: INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','20','40','40','40','43',true,'2023-06-18 09:48:05.933','2023-06-18 09:48:05.933','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]'); - parameters:[]","name":"SequelizeDatabaseError","original":{"code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","errno":1366,"fatal":false,"name":"SqlError","sql":"INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','20','40','40','40','43',true,'2023-06-18 09:48:05.933','2023-06-18 09:48:05.933','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]');","sqlState":"22007","text":"Incorrect integer value: '[object SequelizeInstance:campaign]' for column `dcommerce_jack42_production`.`campaignEntry`.`campaignId` at row 1"},"parameters":{},"parent":{"code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","errno":1366,"fatal":false,"name":"SqlError","sql":"INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','20','40','40','40','43',true,'2023-06-18 09:48:05.933','2023-06-18 09:48:05.933','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]');","sqlState":"22007","text":"Incorrect integer value: '[object SequelizeInstance:campaign]' for column `dcommerce_jack42_production`.`campaignEntry`.`campaignId` at row 1"},"sql":"INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','20','40','40','40','43',true,'2023-06-18 09:48:05.933','2023-06-18 09:48:05.933','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]');","stack":"Error\n    at Query.run (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)\n    at /Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/sequelize.js:315:28\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async MySQLQueryInterface.bulkInsert (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/abstract/query-interface.js:346:21)\n    at async recursiveBulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1697:25)\n    at async Function.bulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1786:12)","timestamp":"2023-06-18T09:48:06.440Z"}
+{"level":"error","message":"Error inserting rows: (conn=576618, no: 1366, SQLState: 22007) Incorrect integer value: '[object SequelizeInstance:campaign]' for column `dcommerce_jack42_production`.`campaignEntry`.`campaignId` at row 1\nsql: INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','343','83','493','443','43',true,'2023-06-18 09:49:06.243','2023-06-18 09:49:06.243','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]'); - parameters:[]","name":"SequelizeDatabaseError","original":{"code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","errno":1366,"fatal":false,"name":"SqlError","sql":"INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','343','83','493','443','43',true,'2023-06-18 09:49:06.243','2023-06-18 09:49:06.243','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]');","sqlState":"22007","text":"Incorrect integer value: '[object SequelizeInstance:campaign]' for column `dcommerce_jack42_production`.`campaignEntry`.`campaignId` at row 1"},"parameters":{},"parent":{"code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","errno":1366,"fatal":false,"name":"SqlError","sql":"INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','343','83','493','443','43',true,'2023-06-18 09:49:06.243','2023-06-18 09:49:06.243','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]');","sqlState":"22007","text":"Incorrect integer value: '[object SequelizeInstance:campaign]' for column `dcommerce_jack42_production`.`campaignEntry`.`campaignId` at row 1"},"sql":"INSERT INTO `campaignEntry` (`id`,`date`,`reach`,`comments`,`results`,`purchaseQty`,`costPerCustomer`,`budgetSpend`,`isActive`,`createdAt`,`updateTimestamp`,`campaignId`,`campaign_id`) VALUES (NULL,'2023-06-18 00:00:00.000','10','343','83','493','443','43',true,'2023-06-18 09:49:06.243','2023-06-18 09:49:06.243','[object SequelizeInstance:campaign]','[object SequelizeInstance:campaign]');","stack":"Error\n    at Query.run (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)\n    at /Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/sequelize.js:315:28\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async MySQLQueryInterface.bulkInsert (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/abstract/query-interface.js:346:21)\n    at async recursiveBulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1697:25)\n    at async Function.bulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1786:12)","timestamp":"2023-06-18T09:49:06.759Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T09:51:32.905Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T09:51:32.907Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T09:51:32.908Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T09:51:32.908Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T09:51:32.910Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T09:51:33.487Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T09:51:33.488Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T09:51:33.488Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T09:51:38.112Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T09:52:31.061Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-18T09:52:38.216Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-18T09:53:09.847Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-18T09:53:58.701Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T10:24:49.430Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T10:24:49.432Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T10:24:49.433Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T10:24:49.433Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T10:24:49.435Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T10:24:50.033Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T10:24:50.034Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T10:24:50.034Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T10:24:54.962Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T10:25:50.985Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T10:32:47.182Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T10:32:47.184Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T10:32:47.184Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T10:32:47.185Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T10:32:47.186Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T10:32:47.746Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T10:32:47.747Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T10:32:47.747Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T10:32:52.744Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T10:33:44.156Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T12:16:34.954Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T12:16:34.957Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T12:16:34.958Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T12:16:34.958Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T12:16:34.960Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T12:16:35.589Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T12:16:35.589Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T12:16:35.589Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T12:16:39.707Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T12:16:44.648Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T12:16:44.649Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T12:16:44.650Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T12:16:44.651Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T12:16:44.652Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T12:16:45.259Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T12:16:45.260Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T12:16:45.260Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T12:16:49.333Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T12:21:24.938Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T12:21:24.941Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T12:21:24.942Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T12:21:24.942Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T12:21:24.944Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T12:21:25.507Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T12:21:25.508Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T12:21:25.509Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T12:21:29.913Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T12:22:13.338Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T12:23:03.119Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T12:23:04.771Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T12:23:05.185Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T12:23:05.560Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T12:23:05.562Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T12:25:39.232Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T12:25:39.796Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T12:25:40.152Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T12:25:40.476Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T12:25:40.477Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T12:33:43.035Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T12:33:43.520Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T12:33:43.899Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T12:33:44.314Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T12:33:44.317Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T12:35:04.213Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T12:35:04.654Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T12:35:05.053Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T12:35:05.400Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T12:35:05.401Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T12:35:15.731Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T12:35:16.127Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T12:35:16.582Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T12:35:16.914Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T12:35:16.915Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T12:36:23.869Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T12:36:24.238Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T12:36:24.746Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T12:36:25.068Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T12:36:25.068Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T12:36:42.580Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T12:36:43.105Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T12:36:43.539Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T12:36:43.912Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T12:36:43.913Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T12:38:50.110Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T12:38:50.442Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T12:38:50.821Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T12:38:51.296Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T12:38:51.296Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T12:39:41.779Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T12:39:42.135Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T12:39:42.527Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T12:39:42.903Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T12:39:42.904Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T12:41:00.084Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T12:41:00.573Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T12:41:01.003Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T12:41:01.340Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T12:41:01.341Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T12:43:58.176Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T12:43:58.178Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T12:43:58.179Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T12:43:58.180Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T12:43:58.181Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T12:43:58.817Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T12:43:58.818Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T12:43:58.818Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T12:44:02.588Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T12:53:58.961Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T12:53:58.963Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T12:53:58.964Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T12:53:58.965Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T12:53:58.966Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T12:53:59.516Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T12:53:59.517Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T12:53:59.517Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T12:54:03.875Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T12:54:47.298Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T12:58:18.250Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T12:58:18.252Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T12:58:18.253Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T12:58:18.253Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T12:58:18.255Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T12:58:18.842Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T12:58:18.842Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T12:58:18.842Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T12:58:23.560Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T12:58:29.068Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T12:58:29.069Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T12:58:29.070Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T12:58:29.071Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T12:58:29.072Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T12:58:29.607Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T12:58:29.608Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T12:58:29.608Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T12:58:33.805Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T13:00:07.588Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T13:00:07.590Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T13:00:07.591Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T13:00:07.591Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T13:00:07.593Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T13:00:08.176Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T13:00:08.177Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T13:00:08.177Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T13:00:12.107Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T13:00:57.529Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T13:01:46.131Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T13:01:46.133Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T13:01:46.133Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T13:01:46.134Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T13:01:46.135Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T13:01:46.698Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T13:01:46.699Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T13:01:46.699Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T13:01:50.617Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T13:02:34.628Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T13:06:03.066Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T13:06:03.446Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T13:06:04.005Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T13:06:04.521Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T13:06:04.522Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T13:10:48.553Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T13:10:48.555Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T13:10:48.555Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T13:10:48.556Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T13:10:48.557Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T13:10:49.112Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T13:10:49.113Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T13:10:49.113Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T13:11:08.851Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T13:11:54.897Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T13:12:16.321Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T13:12:16.778Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T13:12:17.254Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T13:12:17.609Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T13:12:17.611Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T13:12:57.581Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T13:12:58.073Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T13:12:58.473Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T13:12:58.763Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T13:12:58.767Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T13:14:30.063Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T13:14:30.065Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T13:14:30.065Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T13:14:30.066Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T13:14:30.067Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T13:14:30.636Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T13:14:30.636Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T13:14:30.637Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T13:14:33.990Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T13:15:03.180Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T13:15:03.182Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T13:15:03.183Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T13:15:03.183Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T13:15:03.185Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T13:15:03.711Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T13:15:03.712Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T13:15:03.712Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T13:15:06.866Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T13:15:45.685Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T13:16:11.425Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T13:16:11.854Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T13:16:12.264Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T13:16:12.607Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T13:16:12.610Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T13:17:05.580Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T13:17:05.970Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T13:17:06.431Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T13:17:06.772Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T13:17:06.773Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-18T13:19:58.487Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-18T13:19:58.887Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T13:19:59.302Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-18T13:19:59.669Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-18T13:19:59.672Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-18T14:44:37.013Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-18T14:44:37.015Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-18T14:44:37.015Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-18T14:44:37.016Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-18T14:44:37.018Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-18T14:44:37.606Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-18T14:44:37.607Z"}
+{"level":"warn","message":"env: dcommerce_jack42_production","timestamp":"2023-06-18T14:44:37.607Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-18T14:44:42.730Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-18T14:45:34.347Z"}
+{"level":"info","message":"SELECT d.*,o.order_id,o.cancel_reason,SUM(o.order_price_total) AS cart_total FROM dynamic_customer d \n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    WHERE d.record_status != 1 AND d.txn_date BETWEEN '2023-06-18 00:00:00' AND '2023-06-18 23:59:59'\n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-18T14:46:59.046Z"}
+{"level":"error","message":"Row counted: 0","timestamp":"2023-06-18T14:46:59.544Z"}
+{"level":"info","message":"rider[object SequelizeInstance:rider],[object SequelizeInstance:rider]","timestamp":"2023-06-18T14:47:04.161Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T01:31:21.267Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T01:31:21.837Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T01:31:22.395Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T01:31:22.935Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T01:31:22.935Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T01:31:34.252Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T01:31:34.837Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T01:31:35.276Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T01:31:35.674Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T01:31:35.675Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T01:54:02.365Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T01:54:02.976Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T01:54:03.542Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T01:54:03.898Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T01:54:03.898Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T01:56:19.449Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T01:56:19.851Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T01:56:20.480Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T01:56:20.823Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T01:56:20.824Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T01:57:50.571Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T01:57:51.057Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T01:57:51.645Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T01:57:52.209Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T01:57:52.216Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T01:59:31.614Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T01:59:31.974Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T01:59:32.426Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T01:59:32.870Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T01:59:32.871Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T01:59:44.874Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T01:59:45.496Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T01:59:46.028Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T01:59:46.534Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T01:59:46.534Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:02:56.774Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T02:02:57.199Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:02:57.642Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:02:58.001Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:02:58.001Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:04:34.967Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T02:04:35.346Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:04:35.942Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:04:36.409Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:04:36.409Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:06:29.108Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T02:06:29.509Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:06:29.926Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:06:30.481Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:06:30.482Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:07:58.449Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T02:07:58.978Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:07:59.418Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:07:59.878Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:07:59.879Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:09:22.827Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T02:09:23.282Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:09:23.801Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:09:24.359Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:09:24.360Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:11:13.598Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 10 ","timestamp":"2023-06-19T02:11:14.193Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:11:14.749Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:11:15.099Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:11:15.099Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:15:17.912Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-19T02:15:18.331Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:15:18.909Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:15:19.280Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:15:19.280Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-19T02:16:06.702Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:16:07.161Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:16:07.714Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:16:07.715Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:16:07.746Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:16:27.607Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-19T02:16:27.616Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:16:29.575Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:16:30.144Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:16:30.145Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-19T02:16:41.636Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:16:42.054Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:16:42.426Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:16:42.427Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-19T02:31:43.386Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:31:43.894Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:31:44.252Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:31:44.252Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-19T02:32:01.210Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:32:01.642Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:32:02.012Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:32:02.012Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:32:14.068Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-19T02:32:14.078Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:32:14.608Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:32:15.113Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:32:15.114Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:32:26.251Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-19T02:32:27.364Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-19T02:32:27.389Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:32:27.912Z"}
+{"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:32:28.309Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:32:28.310Z"}

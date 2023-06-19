@@ -20,6 +20,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             defaultValue: 0
         },
+        productId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 1001
+        },
         budget: {
             type: DataTypes.DOUBLE,
             allowNull: false,

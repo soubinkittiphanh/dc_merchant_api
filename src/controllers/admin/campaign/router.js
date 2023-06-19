@@ -15,6 +15,7 @@ const validationRulesCreate = [
 ]
 router.post('/create',validationRulesCreate, campaignController.create);
 router.get('/find', campaignController.findAll);
+router.get('/find_summary', campaignController.findCampaignWithSummary);
 router.get('/find/:id', campaignController.findOne);
 router.put('/update/:id', campaignController.update);
 router.delete('/delete/:id', campaignController.delete);
