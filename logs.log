@@ -8427,3 +8427,11 @@
 {"level":"info","message":"app is runing: 8080","timestamp":"2023-06-29T15:31:21.140Z"}
 {"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-29T15:31:21.141Z"}
 {"level":"info","message":"DB Connection established","timestamp":"2023-06-29T15:31:26.148Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-29T15:57:39.193Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-29T15:57:39.196Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-29T15:57:39.196Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-29T15:57:39.197Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-29T15:57:39.198Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-29T15:57:40.080Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-29T15:57:40.081Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-29T15:57:40.082Z"}

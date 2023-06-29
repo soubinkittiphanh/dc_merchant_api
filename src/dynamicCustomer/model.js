@@ -41,17 +41,17 @@ module.exports = (sequelize, DataTypes) => {
         },
         discount: {
             type: DataTypes.DOUBLE,
-            allowNull: false,
+            // allowNull: false,
             defaultValue:0
         },
         cod_fee: {
             type: DataTypes.DOUBLE,
-            allowNull: false,
+            // allowNull: false,
             defaultValue:0
         },
         rider_fee: {
             type: DataTypes.DOUBLE,
-            allowNull: false,
+            // allowNull: false,
             defaultValue:0
         },
         record_status: {
