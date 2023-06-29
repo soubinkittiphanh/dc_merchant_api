@@ -4,11 +4,19 @@ const reportRouter =  require("./reportRouter")
 const generalLedger = require("./generalLedger")
 const chartAccount = require("./chartOfAccount")
 const upgrade = require("./upgrade")
-const rider = require("../controllers/admin/rider").router
+const rider = require("../rider").router
 const campaign = require("../controllers/admin/campaign").router
 const campaignEntry = require("../controllers/admin/campaign/entry").router
 const card = require("../card").router
 const paymentHeadAP = require("../AP/payment/header").router
+const receiveHeadAR = require("../AR/receive/header").router
+const poheader = require("../PO").router
+const poLine = require("../PO/line").router
+const currency = require("../currency").router
+const geography = require("../geography").router
+const customer = require("../dynamicCustomer").router
+const category = require("../category").router
+
 module.exports={
     orderRouter,
     dymCustomerRouter,
@@ -21,4 +29,11 @@ module.exports={
     campaignEntry,
     card,
     paymentHeadAP,
+    receiveHeadAR,
+    currency,
+    poheader,
+    poLine,
+    geography,
+    customer,
+    category
 }

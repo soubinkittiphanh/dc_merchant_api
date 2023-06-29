@@ -100,7 +100,7 @@ const fetchProd = async (req, res) => {
     console.log("*************** FETCH PRODUCT ***************");
     console.log(`*************Payload: *****************ss`);
     // const sqlCom=`SELECT p.*,c.categ_name,IFNULL(i.img_name,'No image') AS img_name,i.img_path,IFNULL(d.card_count,0) AS card_count ,IFNULL(s.cnt,0) AS sale_count FROM product p 
-    // LEFT JOIN product_category c ON c.categ_id=p.pro_category 
+    // LEFT JOIN category c ON c.categ_id=p.pro_category 
     // LEFT JOIN image_path i ON i.pro_id=p.pro_id
     // LEFT JOIN  (SELECT IFNULL(COUNT(pro_id),0) AS cnt,pro_id FROM card_sale GROUP BY pro_id ) s ON s.pro_id=p.pro_id 
     // LEFT JOIN (SELECT d.product_id AS card_pro_id,COUNT(d.card_number)-COUNT(cs.card_code) AS card_count FROM card d
@@ -111,14 +111,14 @@ const fetchProd = async (req, res) => {
     const sqlCom =`SELECT DISTINCT p.*,c.categ_name,IFNULL(i.img_name,'No image') AS img_name,i.img_path,
     p.stock_count AS card_count ,IFNULL(s.cnt,0) AS sale_count, o.name AS outlet_name
     FROM product p 
-    LEFT JOIN product_category c ON c.categ_id=p.pro_category
+    LEFT JOIN category c ON c.categ_id=p.pro_category
     LEFT JOIN outlet o ON o.id = p.outlet
     LEFT JOIN image_path i ON i.pro_id=p.pro_id
     LEFT JOIN  (SELECT IFNULL(COUNT(pro_id),0) AS cnt,pro_id FROM card_sale GROUP BY pro_id ) s ON s.pro_id=p.pro_id ORDER BY p.pro_price;`
     // const sqlCom =`SELECT p.*,c.categ_name,IFNULL(i.img_name,'No image') AS img_name,i.img_path,
     // p.stock_count AS card_count ,IFNULL(s.cnt,0) AS sale_count 
     // FROM product p 
-    // LEFT JOIN product_category c ON c.categ_id=p.pro_category
+    // LEFT JOIN category c ON c.categ_id=p.pro_category
     
     // LEFT JOIN image_path i ON i.pro_id=p.pro_id
     // LEFT JOIN  (SELECT IFNULL(COUNT(pro_id),0) AS cnt,pro_id FROM card_sale GROUP BY pro_id ) s ON s.pro_id=p.pro_id ORDER BY p.pro_price;`
@@ -133,7 +133,7 @@ const fetchProdMobile = async (req, res) => {
     const sqlCom=`SELECT p.*,c.categ_name,IFNULL(i.img_name,'No image') AS img_name,i.img_path,
     p.stock_count AS card_count ,IFNULL(s.cnt,0) AS sale_count, o.name AS outlet_name
     FROM product p 
-    LEFT JOIN product_category c ON c.categ_id=p.pro_category
+    LEFT JOIN category c ON c.categ_id=p.pro_category
     LEFT JOIN outlet o ON o.id = p.outlet
     LEFT JOIN image_path i ON i.pro_id=p.pro_id
     LEFT JOIN  (SELECT IFNULL(COUNT(pro_id),0) AS cnt,pro_id FROM card_sale GROUP BY pro_id ) s ON s.pro_id=p.pro_id 

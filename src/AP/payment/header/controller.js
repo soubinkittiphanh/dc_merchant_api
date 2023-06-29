@@ -18,6 +18,7 @@ exports.createPaymentHeader = async (req, res) => {
   try {
     // ******** Remove all , thousand separater ********//
     req.body.totalAmount = replaceAll(req.body.totalAmount,",","");
+    req.body.locking_session_id = Date.now();
     const paymentHeader = await PaymentHeader.create(req.body);
     res.status(200).json(paymentHeader);
   } catch (error) {
@@ -58,6 +59,7 @@ exports.updatePaymentHeaderById = async (req, res) => {
     if (!paymentHeader) {
       return res.status(404).json({ message: "Payment Header not found" });
     }
+    req.body.totalAmount = replaceAll(req.body.totalAmount,",","");
     await paymentHeader.update(req.body);
     res.status(200).json(paymentHeader);
   } catch (error) {

@@ -23,6 +23,13 @@ const buildApp = async () => {
     app.use("/api/campaignEntry",myRouter.campaignEntry)
     app.use("/api/card",myRouter.card)
     app.use("/api/finanicial/ap/header",myRouter.paymentHeadAP)
+    app.use("/api/finanicial/ar/header",myRouter.receiveHeadAR)
+    app.use("/api/currency",myRouter.currency)
+    app.use("/api/po",myRouter.poheader)
+    app.use("/api/po/line",myRouter.poLine)
+    app.use("/api/category",myRouter.category)
+    app.use("/api/customer",myRouter.dymCustomerRouter)
+    app.use("/api/geography",myRouter.geography)
 
     Router.category(app);
     Router.product(app);

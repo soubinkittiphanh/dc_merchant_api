@@ -1,6 +1,6 @@
-const logger = require('../../../api/logger');
+const logger = require('../api/logger');
 
-const Rider = require('../../../models').rider;
+const Rider = require('../models').rider;
 
 const riderController = {
   getAllRiders: async (req, res) => {

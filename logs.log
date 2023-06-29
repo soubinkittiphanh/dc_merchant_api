@@ -7423,3 +7423,962 @@
 {"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-19T02:32:27.912Z"}
 {"level":"info","message":"Record count => 30","timestamp":"2023-06-19T02:32:28.309Z"}
 {"level":"info","message":"Cal finish","timestamp":"2023-06-19T02:32:28.310Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-19T02:55:55.761Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-19T02:55:55.763Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-19T02:55:55.764Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-19T02:55:55.764Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-19T02:55:55.766Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-19T02:55:56.349Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-19T02:55:56.350Z"}
+{"level":"warn","message":"env: dcommerce_production","timestamp":"2023-06-19T02:55:56.350Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-19T02:56:01.468Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-21T14:21:03.726Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-21T14:21:03.728Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-21T14:21:03.729Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-21T14:21:03.729Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-21T14:21:03.731Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-21T14:21:04.320Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-21T14:21:04.320Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-21T14:21:04.320Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-21T14:21:08.735Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-21T14:21:56.440Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-21T14:21:56.442Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-21T14:21:56.443Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-21T14:21:56.443Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-21T14:21:56.445Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-21T14:21:57.017Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-21T14:21:57.018Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-21T14:21:57.018Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-21T14:22:01.057Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-21T14:28:08.123Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-21T14:28:08.125Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-21T14:28:08.126Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-21T14:28:08.126Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-21T14:28:08.128Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-21T14:28:08.730Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-21T14:28:08.731Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-21T14:28:08.731Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-21T14:28:12.963Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-21T14:28:58.135Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-21T14:33:56.493Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-21T14:33:56.558Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-21T14:33:58.428Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-21T14:33:58.729Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-21T14:33:58.731Z"}
+{"level":"info","message":"====>1,000","timestamp":"2023-06-21T14:34:35.118Z"}
+{"level":"info","message":"====>1,000","timestamp":"2023-06-21T14:38:01.352Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-21T14:55:03.654Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-21T14:55:03.659Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-21T14:55:04.172Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-21T14:55:04.568Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-21T14:55:04.569Z"}
+{"level":"info","message":"====>1000","timestamp":"2023-06-21T14:59:20.840Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-22T15:19:42.001Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-22T15:19:42.056Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-22T15:19:43.264Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-22T15:19:43.685Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-22T15:19:43.685Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T15:21:21.642Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T15:21:21.644Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T15:21:21.644Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T15:21:21.645Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T15:21:21.646Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T15:21:22.241Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T15:21:22.242Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T15:21:22.242Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T15:21:25.103Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-22T15:21:59.212Z"}
+{"level":"info","message":"====>10,000","timestamp":"2023-06-22T15:23:24.822Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T15:54:37.294Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T15:54:37.296Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T15:54:37.296Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T15:54:37.297Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T15:54:37.299Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T15:54:37.880Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T15:54:37.881Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T15:54:37.881Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T15:54:41.334Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-22T15:55:16.410Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T16:00:51.048Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T16:00:51.050Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T16:00:51.051Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T16:00:51.052Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T16:00:51.053Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T16:00:51.737Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T16:00:51.737Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T16:00:51.737Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T16:00:55.074Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T16:01:15.694Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T16:01:15.696Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T16:01:15.697Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T16:01:15.698Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T16:01:15.699Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T16:01:16.227Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T16:01:16.228Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T16:01:16.229Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T16:01:19.641Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-22T16:02:02.277Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T16:03:04.476Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T16:03:04.479Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T16:03:04.480Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T16:03:04.480Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T16:03:04.482Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T16:03:05.067Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T16:03:05.068Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T16:03:05.068Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T16:03:08.106Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-22T16:03:48.240Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T16:10:54.395Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T16:10:54.396Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T16:10:54.397Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T16:10:54.398Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T16:10:54.399Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T16:10:55.062Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T16:10:55.063Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T16:10:55.063Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T16:10:58.417Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-22T16:11:43.434Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T16:14:34.311Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T16:14:34.313Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T16:14:34.314Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T16:14:34.315Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T16:14:34.316Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T16:14:34.906Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T16:14:34.907Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T16:14:34.907Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T16:14:38.189Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-22T16:15:19.445Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T16:15:47.893Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T16:15:47.895Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T16:15:47.896Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T16:15:47.896Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T16:15:47.898Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T16:15:48.455Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T16:15:48.456Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T16:15:48.456Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T16:15:51.298Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-22T16:16:35.836Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T16:19:18.508Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T16:19:18.510Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T16:19:18.511Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T16:19:18.512Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T16:19:18.513Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T16:19:19.099Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T16:19:19.100Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T16:19:19.100Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T16:19:22.445Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T16:19:51.849Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T16:19:51.851Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T16:19:51.852Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T16:19:51.852Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T16:19:51.853Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T16:19:52.393Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T16:19:52.394Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T16:19:52.394Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T16:19:55.715Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T16:21:01.430Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T16:21:01.432Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T16:21:01.433Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T16:21:01.433Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T16:21:01.435Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T16:21:01.990Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T16:21:01.991Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T16:21:01.991Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T16:21:05.202Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-22T16:21:48.976Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-22T17:06:02.465Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-22T17:06:02.475Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-22T17:06:03.790Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-22T17:06:04.090Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-22T17:06:04.092Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-22T17:06:39.348Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-22T17:06:39.376Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-22T17:06:39.718Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-22T17:06:39.980Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-22T17:06:39.984Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T17:11:53.870Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T17:11:53.872Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T17:11:53.873Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T17:11:53.873Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T17:11:53.875Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T17:11:54.497Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T17:11:54.498Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T17:11:54.498Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-22T17:11:57.776Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-22T17:12:36.455Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-22T17:14:25.347Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-22T17:14:25.349Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-22T17:14:25.350Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-22T17:14:25.351Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-22T17:14:25.352Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-22T17:14:25.931Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-22T17:14:25.932Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-22T17:14:25.932Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T03:43:19.713Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T03:43:19.715Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T03:43:19.715Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T03:43:19.716Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T03:43:19.718Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T03:43:20.361Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T03:43:20.361Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T03:43:20.362Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T03:43:24.151Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T03:46:38.578Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T03:46:38.580Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T03:46:38.580Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T03:46:38.581Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T03:46:38.582Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T03:46:39.205Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T03:46:39.206Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T03:46:39.206Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T03:46:42.592Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T03:48:25.010Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T03:48:25.013Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T03:48:25.013Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T03:48:25.014Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T03:48:25.015Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T03:48:25.661Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T03:48:25.662Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T03:48:25.662Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T03:48:30.332Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T03:51:44.283Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T03:51:44.285Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T03:51:44.286Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T03:51:44.286Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T03:51:44.288Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T03:51:44.906Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T03:51:44.907Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T03:51:44.907Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T03:51:49.402Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T03:57:07.250Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T03:57:07.252Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T03:57:07.253Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T03:57:07.253Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T03:57:07.255Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T03:57:07.905Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T03:57:07.906Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T03:57:07.907Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T03:57:11.452Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T04:28:31.587Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T04:28:31.590Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T04:28:31.591Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T04:28:31.592Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T04:28:31.594Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T04:28:32.563Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T04:28:32.564Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T04:28:32.564Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T04:28:36.018Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T04:52:04.047Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T04:52:04.049Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T04:52:04.050Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T04:52:04.051Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T04:52:04.053Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T04:52:04.846Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T04:52:04.847Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T04:52:04.847Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T04:52:08.870Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:00:58.792Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:00:58.795Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:00:58.796Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:00:58.797Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:00:58.800Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:01:00.106Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:01:00.107Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:01:00.107Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:01:03.590Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:02:01.512Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:02:01.514Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:02:01.515Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:02:01.516Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:02:01.517Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:02:02.206Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:02:02.207Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:02:02.207Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:02:06.825Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:09:06.479Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:09:06.482Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:09:06.483Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:09:06.483Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:09:06.485Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:09:07.222Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:09:07.223Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:09:07.223Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:09:11.793Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:18:09.876Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:18:09.879Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:18:09.879Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:18:09.880Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:18:09.881Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:18:10.556Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:18:10.557Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:18:10.557Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:18:14.084Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:21:43.096Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:21:43.098Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:21:43.099Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:21:43.100Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:21:43.101Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:21:43.760Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:21:43.761Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:21:43.761Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:21:47.277Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:31:14.092Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:31:14.094Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:31:14.094Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:31:14.095Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:31:14.096Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:31:14.784Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:31:14.785Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:31:14.785Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:31:18.487Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:31:31.686Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:31:31.688Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:31:31.689Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:31:31.689Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:31:31.691Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:31:32.260Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:31:32.261Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:31:32.261Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:31:35.893Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:31:43.915Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:31:43.918Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:31:43.919Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:31:43.920Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:31:43.922Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:31:44.569Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:31:44.570Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:31:44.571Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:31:48.083Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:34:12.147Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:34:12.149Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:34:12.150Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:34:12.150Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:34:12.152Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:34:12.739Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:34:12.740Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:34:12.740Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:34:16.150Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:37:29.692Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:37:29.694Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:37:29.695Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:37:29.695Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:37:29.697Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:37:30.303Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:37:30.304Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:37:30.304Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:37:33.852Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:41:13.979Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:41:13.981Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:41:13.982Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:41:13.982Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:41:13.984Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:41:14.572Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:41:14.573Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:41:14.573Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:41:21.212Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:42:40.366Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:42:40.368Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:42:40.369Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:42:40.370Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:42:40.373Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:42:40.989Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:42:40.990Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:42:40.990Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:42:44.474Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:43:20.899Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:43:20.901Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:43:20.902Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:43:20.903Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:43:20.904Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:43:21.566Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:43:21.566Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:43:21.566Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:43:25.227Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:48:56.225Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:48:56.227Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:48:56.228Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:48:56.229Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:48:56.230Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:48:56.823Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:48:56.824Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:48:56.824Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:49:00.587Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:52:12.417Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:52:12.419Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:52:12.420Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:52:12.420Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:52:12.422Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:52:12.987Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:52:12.988Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:52:12.988Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:52:16.586Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:53:27.480Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:53:27.482Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:53:27.483Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:53:27.484Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:53:27.485Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:53:28.080Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:53:28.081Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:53:28.081Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:53:31.747Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:55:26.170Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:55:26.172Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:55:26.173Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:55:26.174Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:55:26.175Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:55:26.726Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:55:26.727Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:55:26.727Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:55:30.546Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T05:58:58.609Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T05:58:58.611Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T05:58:58.611Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T05:58:58.612Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T05:58:58.613Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T05:58:59.232Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T05:58:59.232Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T05:58:59.233Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T05:59:02.905Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T06:00:13.509Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T06:00:13.511Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T06:00:13.512Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T06:00:13.512Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T06:00:13.514Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T06:00:14.091Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T06:00:14.092Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T06:00:14.092Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T06:01:36.527Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T06:01:36.529Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T06:01:36.530Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T06:01:36.531Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T06:01:36.532Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T06:01:37.149Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T06:01:37.150Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T06:01:37.151Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T06:01:41.020Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-23T06:02:50.023Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T06:04:48.087Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T06:04:48.089Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T06:04:48.090Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T06:04:48.091Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T06:04:48.092Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T06:04:48.725Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T06:04:48.726Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T06:04:48.726Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T06:04:52.402Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-23T06:06:09.214Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T06:11:18.335Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T06:11:18.337Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T06:11:18.338Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T06:11:18.339Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T06:11:18.340Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T06:11:19.021Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T06:11:19.022Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-23T06:11:19.023Z"}
+{"level":"error","message":"DB Connection error: SequelizeConnectionError: (conn=622074, no: 1049, SQLState: 42000) Unknown database 'dcommerce_dev_1'","timestamp":"2023-06-23T06:11:20.008Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T06:11:34.681Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T06:11:34.683Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T06:11:34.684Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T06:11:34.685Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T06:11:34.686Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T06:11:35.269Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T06:11:35.270Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-23T06:11:35.270Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T06:11:38.829Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T06:12:59.493Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T06:12:59.495Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T06:12:59.496Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T06:12:59.497Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T06:12:59.498Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T06:13:00.119Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T06:13:00.120Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-23T06:13:00.120Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T06:13:03.815Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-23T06:14:09.558Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T06:19:48.798Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T06:19:48.800Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T06:19:48.801Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T06:19:48.802Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T06:19:48.803Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T06:19:49.470Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T06:19:49.471Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-23T06:19:49.471Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T06:19:53.011Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-23T06:21:23.742Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T07:49:47.499Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T07:49:47.501Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T07:49:47.502Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T07:49:47.502Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T07:49:47.504Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T07:49:48.175Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T07:49:48.176Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-23T07:49:48.176Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T07:49:51.711Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-23T07:51:14.666Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T07:51:17.072Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T07:51:17.074Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T07:51:17.075Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T07:51:17.075Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T07:51:17.077Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T07:51:17.724Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T07:51:17.724Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-23T07:51:17.725Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T07:51:21.280Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-23T07:52:49.277Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T08:05:58.515Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T08:05:58.519Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T08:05:58.520Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T08:05:58.521Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T08:05:58.522Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T08:05:59.248Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T08:05:59.249Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-23T08:05:59.249Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T08:06:02.780Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-23T15:41:58.480Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-23T15:41:58.483Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-23T15:41:58.483Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-23T15:41:58.484Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-23T15:41:58.485Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-23T15:41:59.135Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-23T15:41:59.136Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-23T15:41:59.136Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-23T15:42:03.992Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-23T15:43:39.829Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-23T15:43:42.902Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-23T15:43:43.509Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-23T15:43:43.549Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-23T15:43:45.072Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-23T15:43:45.408Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-23T15:43:45.409Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-25T07:13:52.906Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-25T07:13:52.908Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-25T07:13:52.909Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-25T07:13:52.909Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-25T07:13:52.911Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-25T07:13:53.543Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-25T07:13:53.544Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-25T07:13:53.544Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-25T07:13:58.240Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-25T07:15:26.184Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-25T07:16:33.019Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-25T07:16:33.077Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-25T07:16:34.576Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-25T07:16:35.019Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-25T07:16:35.021Z"}
+{"level":"info","message":"rider[object SequelizeInstance:rider],[object SequelizeInstance:rider]","timestamp":"2023-06-25T07:16:46.544Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-25T07:24:21.260Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-25T07:24:21.263Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-25T07:24:21.263Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-25T07:24:21.264Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-25T07:24:21.265Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-25T07:24:21.893Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-25T07:24:21.894Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-25T07:24:21.894Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-25T07:24:26.275Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-25T07:34:25.641Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-25T07:34:25.643Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-25T07:34:25.644Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-25T07:34:25.644Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-25T07:34:25.646Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-25T07:34:26.281Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-25T07:34:26.282Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-25T07:34:26.282Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-25T07:34:31.166Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-25T07:36:33.118Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-25T07:36:33.120Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-25T07:36:33.121Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-25T07:36:33.122Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-25T07:36:33.123Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-25T07:36:33.772Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-25T07:36:33.773Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-25T07:36:33.773Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-25T07:36:37.848Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-25T07:38:08.656Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-25T07:40:07.260Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-25T07:40:07.285Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-25T07:40:08.823Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-25T07:40:09.291Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-25T07:40:09.295Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-25T07:47:14.926Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-25T07:47:14.928Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-25T07:47:14.929Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-25T07:47:14.929Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-25T07:47:14.930Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-25T07:47:15.557Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-25T07:47:15.557Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-25T07:47:15.558Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-25T07:47:20.091Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-25T07:47:56.329Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-25T07:47:56.331Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-25T07:47:56.332Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-25T07:47:56.332Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-25T07:47:56.334Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-25T07:47:56.947Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-25T07:47:56.948Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-25T07:47:56.948Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-25T07:48:01.761Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-25T07:50:20.227Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-25T07:50:20.229Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-25T07:50:20.230Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-25T07:50:20.230Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-25T07:50:20.232Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-25T07:50:20.881Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-25T07:50:20.882Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-25T07:50:20.882Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-25T07:50:25.052Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-25T07:51:55.500Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-25T08:07:03.169Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-25T08:07:03.172Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-25T08:07:03.173Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-25T08:07:03.173Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-25T08:07:03.175Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-25T08:07:03.727Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-25T08:07:03.728Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-25T08:07:03.728Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-25T08:07:07.901Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-25T08:08:36.006Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-25T13:51:28.053Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-25T13:51:28.055Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-25T13:51:28.056Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-25T13:51:28.056Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-25T13:51:28.057Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-25T13:51:28.727Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-25T13:51:28.727Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-25T13:51:28.728Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-25T13:51:33.513Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-25T13:53:07.715Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-26T15:22:39.514Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-26T15:22:39.541Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-26T15:22:41.657Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-26T15:22:42.060Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-26T15:22:42.062Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-26T15:24:43.863Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-26T15:24:43.866Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-26T15:24:43.867Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-26T15:24:43.867Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-26T15:24:43.869Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-26T15:24:44.628Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-26T15:24:44.629Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-26T15:24:44.630Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-26T15:24:46.249Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-26T15:24:46.251Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-26T15:24:46.251Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-26T15:24:46.252Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-26T15:24:46.254Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-26T15:24:46.730Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-26T15:24:46.731Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-26T15:24:46.731Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-26T15:24:55.203Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-26T15:26:37.476Z"}
+{"errors":[{"instance":{"bookingDate":"2023-06-26T00:00:00.000Z","createdAt":"2023-06-26T15:30:14.806Z","deliveryDate":"2023-06-26T00:00:00.000Z","id":null,"isActive":true,"notes":"Please deliver to loading dock B.","updateTimestamp":"2023-06-26T15:30:14.806Z","vendor":"Acme Inc."},"message":"po_header.locking_session_id cannot be null","origin":"CORE","path":"locking_session_id","type":"notNull Violation","validatorArgs":[],"validatorKey":"is_null","validatorName":null,"value":null}],"level":"error","name":"SequelizeValidationError","timestamp":"2023-06-26T15:30:14.811Z"}
+{"errors":[{"instance":{"bookingDate":"2023-06-26T00:00:00.000Z","createdAt":"2023-06-26T15:31:17.452Z","deliveryDate":"2023-06-26T00:00:00.000Z","id":null,"isActive":true,"notes":"Please deliver to loading dock B.","updateTimestamp":"2023-06-26T15:31:17.452Z","vendor":"Acme Inc."},"message":"po_header.locking_session_id cannot be null","origin":"CORE","path":"locking_session_id","type":"notNull Violation","validatorArgs":[],"validatorKey":"is_null","validatorName":null,"value":null}],"level":"error","name":"SequelizeValidationError","timestamp":"2023-06-26T15:31:17.454Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-26T15:31:52.638Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-26T15:31:52.641Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-26T15:31:52.641Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-26T15:31:52.642Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-26T15:31:52.644Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-26T15:31:53.365Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-26T15:31:53.366Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-26T15:31:53.366Z"}
+{"level":"error","message":"DB Connection error: SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms","timestamp":"2023-06-26T15:31:56.578Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-26T15:32:01.732Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-26T15:32:01.734Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-26T15:32:01.735Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-26T15:32:01.736Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-26T15:32:01.738Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-26T15:32:02.242Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-26T15:32:02.243Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-26T15:32:02.243Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-26T15:32:07.236Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-26T15:33:49.022Z"}
+{"errors":[{"instance":{"bookingDate":"2023-06-26T00:00:00.000Z","createdAt":"2023-06-26T15:36:18.869Z","deliveryDate":"2023-06-26T00:00:00.000Z","id":null,"isActive":true,"notes":"Please deliver to loading dock B.","updateTimestamp":"2023-06-26T15:36:18.869Z","vendor":"Acme Inc."},"message":"po_header.locking_session_id cannot be null","origin":"CORE","path":"locking_session_id","type":"notNull Violation","validatorArgs":[],"validatorKey":"is_null","validatorName":null,"value":null}],"level":"error","name":"SequelizeValidationError","timestamp":"2023-06-26T15:36:18.870Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-26T15:38:28.561Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-26T15:38:28.563Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-26T15:38:28.564Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-26T15:38:28.565Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-26T15:38:28.566Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-26T15:38:29.280Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-26T15:38:29.281Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-26T15:38:29.281Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-26T15:38:33.808Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-26T15:40:15.486Z"}
+{"level":"error","message":"Error inserting rows: (conn=652758, no: 1364, SQLState: HY000) Field 'locking_session_id' doesn't have a default value\nsql: INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:40:23.993','2023-06-26 15:40:23.993',1,1,2,1); - parameters:[]","name":"SequelizeDatabaseError","original":{"code":"ER_NO_DEFAULT_FOR_FIELD","errno":1364,"fatal":false,"name":"SqlError","sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:40:23.993','2023-06-26 15:40:23.993',1,1,2,1);","sqlState":"HY000","text":"Field 'locking_session_id' doesn't have a default value"},"parameters":{},"parent":{"code":"ER_NO_DEFAULT_FOR_FIELD","errno":1364,"fatal":false,"name":"SqlError","sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:40:23.993','2023-06-26 15:40:23.993',1,1,2,1);","sqlState":"HY000","text":"Field 'locking_session_id' doesn't have a default value"},"sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:40:23.993','2023-06-26 15:40:23.993',1,1,2,1);","stack":"Error\n    at Query.run (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)\n    at /Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/sequelize.js:315:28\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async MySQLQueryInterface.bulkInsert (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/abstract/query-interface.js:346:21)\n    at async recursiveBulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1697:25)\n    at async Function.bulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1786:12)","timestamp":"2023-06-26T15:40:24.397Z"}
+{"level":"error","message":"Error inserting rows: (conn=652758, no: 1364, SQLState: HY000) Field 'locking_session_id' doesn't have a default value\nsql: INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:42:03.639','2023-06-26 15:42:03.639',2,2,2,1); - parameters:[]","name":"SequelizeDatabaseError","original":{"code":"ER_NO_DEFAULT_FOR_FIELD","errno":1364,"fatal":false,"name":"SqlError","sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:42:03.639','2023-06-26 15:42:03.639',2,2,2,1);","sqlState":"HY000","text":"Field 'locking_session_id' doesn't have a default value"},"parameters":{},"parent":{"code":"ER_NO_DEFAULT_FOR_FIELD","errno":1364,"fatal":false,"name":"SqlError","sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:42:03.639','2023-06-26 15:42:03.639',2,2,2,1);","sqlState":"HY000","text":"Field 'locking_session_id' doesn't have a default value"},"sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:42:03.639','2023-06-26 15:42:03.639',2,2,2,1);","stack":"Error\n    at Query.run (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)\n    at /Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/sequelize.js:315:28\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async MySQLQueryInterface.bulkInsert (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/abstract/query-interface.js:346:21)\n    at async recursiveBulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1697:25)\n    at async Function.bulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1786:12)","timestamp":"2023-06-26T15:42:04.048Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-26T15:43:27.020Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-26T15:43:27.022Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-26T15:43:27.023Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-26T15:43:27.024Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-26T15:43:27.026Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-26T15:43:27.685Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-26T15:43:27.685Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-26T15:43:27.686Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-26T15:43:32.470Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-26T15:45:13.312Z"}
+{"level":"error","message":"Error inserting rows: (conn=652794, no: 1364, SQLState: HY000) Field 'locking_session_id' doesn't have a default value\nsql: INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:45:18.104','2023-06-26 15:45:18.104',3,3,2,1); - parameters:[]","name":"SequelizeDatabaseError","original":{"code":"ER_NO_DEFAULT_FOR_FIELD","errno":1364,"fatal":false,"name":"SqlError","sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:45:18.104','2023-06-26 15:45:18.104',3,3,2,1);","sqlState":"HY000","text":"Field 'locking_session_id' doesn't have a default value"},"parameters":{},"parent":{"code":"ER_NO_DEFAULT_FOR_FIELD","errno":1364,"fatal":false,"name":"SqlError","sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:45:18.104','2023-06-26 15:45:18.104',3,3,2,1);","sqlState":"HY000","text":"Field 'locking_session_id' doesn't have a default value"},"sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'1',1,'25','250',true,'2023-06-26 15:45:18.104','2023-06-26 15:45:18.104',3,3,2,1);","stack":"Error\n    at Query.run (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)\n    at /Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/sequelize.js:315:28\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async MySQLQueryInterface.bulkInsert (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/abstract/query-interface.js:346:21)\n    at async recursiveBulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1697:25)\n    at async Function.bulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1786:12)","timestamp":"2023-06-26T15:45:18.615Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-26T15:46:18.930Z"}
+{"level":"error","message":"Error inserting rows: (conn=652794, no: 1364, SQLState: HY000) Field 'locking_session_id' doesn't have a default value\nsql: INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'2.5',10,'25','250',true,'2023-06-26 15:47:30.137','2023-06-26 15:47:30.137',5,5,11,1); - parameters:[]","name":"SequelizeDatabaseError","original":{"code":"ER_NO_DEFAULT_FOR_FIELD","errno":1364,"fatal":false,"name":"SqlError","sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'2.5',10,'25','250',true,'2023-06-26 15:47:30.137','2023-06-26 15:47:30.137',5,5,11,1);","sqlState":"HY000","text":"Field 'locking_session_id' doesn't have a default value"},"parameters":{},"parent":{"code":"ER_NO_DEFAULT_FOR_FIELD","errno":1364,"fatal":false,"name":"SqlError","sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'2.5',10,'25','250',true,'2023-06-26 15:47:30.137','2023-06-26 15:47:30.137',5,5,11,1);","sqlState":"HY000","text":"Field 'locking_session_id' doesn't have a default value"},"sql":"INSERT INTO `po_line` (`id`,`rate`,`qty`,`price`,`total`,`isActive`,`createdAt`,`updateTimestamp`,`poHeaderId`,`headerId`,`productId`,`currencyId`) VALUES (NULL,'2.5',10,'25','250',true,'2023-06-26 15:47:30.137','2023-06-26 15:47:30.137',5,5,11,1);","stack":"Error\n    at Query.run (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)\n    at /Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/sequelize.js:315:28\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async MySQLQueryInterface.bulkInsert (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/dialects/abstract/query-interface.js:346:21)\n    at async recursiveBulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1697:25)\n    at async Function.bulkCreate (/Users/soubinkittiphanh/Desktop/Pro/online_store/online_store_api_bae/node_modules/sequelize/lib/model.js:1786:12)","timestamp":"2023-06-26T15:47:30.608Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-26T15:48:12.490Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-27T05:30:46.659Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-27T06:02:40.087Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-27T06:02:40.089Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-27T06:02:40.090Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-27T06:02:40.090Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-27T06:02:40.091Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-27T06:02:40.878Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-27T06:02:40.878Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-27T06:02:40.879Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-27T06:02:44.197Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-27T06:02:49.921Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-27T06:02:49.923Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-27T06:02:49.924Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-27T06:02:49.924Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-27T06:02:49.925Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-27T06:02:50.527Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-27T06:02:50.527Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-27T06:02:50.528Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-27T06:02:53.836Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-27T06:04:11.140Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-27T06:05:30.103Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-27T06:05:30.145Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-27T06:05:31.420Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-27T06:05:31.668Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-27T06:05:31.670Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-27T06:27:04.991Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-27T06:27:05.192Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-27T06:27:05.504Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-27T06:27:05.750Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-27T06:27:05.751Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T07:34:10.145Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T07:34:10.148Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T07:34:10.149Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T07:34:10.149Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T07:34:10.153Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T07:34:10.965Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T07:34:10.966Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-28T07:34:10.966Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T07:34:14.246Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T07:34:14.248Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T07:34:14.248Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T07:34:14.249Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T07:34:14.250Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T07:34:14.797Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T07:34:14.797Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-28T07:34:14.798Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T13:40:46.209Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T13:40:46.211Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T13:40:46.212Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T13:40:46.213Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T13:40:46.214Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T13:40:46.886Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T13:40:46.886Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-28T13:40:46.887Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T13:40:51.598Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T13:41:27.126Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T13:41:27.128Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T13:41:27.129Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T13:41:27.130Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T13:41:27.131Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T13:41:28.347Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T13:41:28.348Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-28T13:41:28.348Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T13:41:32.133Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T13:42:47.344Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T13:42:47.346Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T13:42:47.346Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T13:42:47.347Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T13:42:47.348Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T13:42:47.970Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T13:42:47.971Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-28T13:42:47.971Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T13:42:52.736Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T13:49:43.932Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T13:49:43.934Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T13:49:43.935Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T13:49:43.935Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T13:49:43.937Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T13:49:44.705Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T13:49:44.706Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-28T13:49:44.707Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T13:49:49.017Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T13:52:19.964Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T13:52:19.967Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T13:52:19.969Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T13:52:19.970Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T13:52:19.973Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T13:52:20.867Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T13:52:20.868Z"}
+{"level":"warn","message":"env: dcommerce_dev","timestamp":"2023-06-28T13:52:20.869Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T13:52:25.345Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-28T13:54:15.975Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-28T13:56:29.689Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-28T13:56:29.731Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-28T13:56:31.073Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-28T13:56:31.464Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-28T13:56:31.466Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-28T14:16:14.047Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-28T14:16:14.068Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-28T14:16:14.755Z"}
+{"level":"info","message":"Record count => 37","timestamp":"2023-06-28T14:16:15.261Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-28T14:16:15.262Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-28T14:41:38.507Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-28T15:43:18.508Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-28T15:43:24.750Z"}
+{"level":"info","message":"rider[object SequelizeInstance:rider],[object SequelizeInstance:rider]","timestamp":"2023-06-28T15:44:18.722Z"}
+{"level":"info","message":{"locking_session_id":"1686715798470","order_id":10013,"payment_amount":229000,"payment_method":"TRANSFER","payment_status":"PAID","user_id":1000},"timestamp":"2023-06-28T15:47:20.659Z"}
+{"level":"info","message":"DYN CUS ","timestamp":"2023-06-28T15:47:20.664Z"}
+{"level":"info","message":"DYN TABLE","timestamp":"2023-06-28T15:47:21.403Z"}
+{"level":"info","message":"PAYMENT SQL ","timestamp":"2023-06-28T15:47:21.404Z"}
+{"level":"info","message":"order_payment ","timestamp":"2023-06-28T15:47:21.708Z"}
+{"level":"info","message":{"locking_session_id":"1686718749743","order_id":10015,"payment_amount":189000,"payment_method":"TRANSFER","payment_status":"PAID","user_id":1000},"timestamp":"2023-06-28T15:47:43.042Z"}
+{"level":"info","message":"DYN CUS ","timestamp":"2023-06-28T15:47:43.042Z"}
+{"level":"info","message":"DYN TABLE","timestamp":"2023-06-28T15:47:43.729Z"}
+{"level":"info","message":"PAYMENT SQL ","timestamp":"2023-06-28T15:47:43.730Z"}
+{"level":"info","message":"order_payment ","timestamp":"2023-06-28T15:47:44.135Z"}
+{"level":"info","message":"Find order by id","timestamp":"2023-06-28T15:48:01.313Z"}
+{"level":"info","message":"SELECT o.*,p.pro_name FROM user_order o\n    LEFT JOIN product p on o.product_id=p.pro_id\n     WHERE o.order_id =  '10015'","timestamp":"2023-06-28T15:48:01.313Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.656Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.657Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.657Z"}
+{"level":"info","message":"DATA : ","timestamp":"2023-06-28T15:48:01.657Z"}
+{"level":"info","message":"Rows inserted successfully","timestamp":"2023-06-28T15:51:12.098Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T16:12:46.963Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T16:12:46.966Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T16:12:46.967Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T16:12:46.968Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T16:12:46.969Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T16:12:47.687Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T16:12:47.688Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-28T16:12:47.688Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T16:12:51.735Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T16:13:22.691Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T16:13:22.693Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T16:13:22.694Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T16:13:22.694Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T16:13:22.696Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T16:13:23.371Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T16:13:23.375Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-28T16:13:23.376Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T16:13:27.477Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T16:15:55.098Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T16:15:55.100Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T16:15:55.101Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T16:15:55.102Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T16:15:55.103Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T16:15:55.759Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T16:15:55.760Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-28T16:15:55.760Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T16:15:59.542Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T16:16:44.600Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T16:16:44.602Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T16:16:44.603Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T16:16:44.603Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T16:16:44.605Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T16:16:45.278Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T16:16:45.279Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-28T16:16:45.279Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T16:16:49.517Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T16:19:06.756Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T16:19:06.758Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T16:19:06.759Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T16:19:06.760Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T16:19:06.761Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T16:19:07.452Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T16:19:07.453Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-28T16:19:07.454Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T16:19:11.450Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T16:20:48.013Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T16:20:48.015Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T16:20:48.016Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T16:20:48.017Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T16:20:48.018Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T16:20:48.708Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T16:20:48.709Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-28T16:20:48.710Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T16:20:52.421Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T16:21:09.709Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T16:21:09.711Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T16:21:09.712Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T16:21:09.712Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T16:21:09.713Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T16:21:10.323Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T16:21:10.324Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-28T16:21:10.324Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T16:21:14.747Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T16:23:24.607Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T16:23:24.609Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T16:23:24.610Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T16:23:24.610Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T16:23:24.612Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T16:23:25.300Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T16:23:25.300Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-28T16:23:25.301Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-28T16:23:29.405Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-28T16:25:04.096Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-28T16:29:09.016Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-28T16:29:09.017Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-28T16:29:09.018Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-28T16:29:09.019Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-28T16:29:09.020Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-28T16:29:09.685Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-28T16:29:09.686Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-28T16:29:09.686Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-29T09:38:43.985Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-29T09:38:43.987Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-29T09:38:43.987Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-29T09:38:43.988Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-29T09:38:43.989Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-29T09:38:44.818Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-29T09:38:44.819Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-29T09:38:44.819Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-29T09:38:48.069Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-29T09:40:16.436Z"}
+{"level":"info","message":"SELECT SUM(o.product_amount) AS sale_count,\n    SUM(o.order_price_total) as total_sale,\n    o.txn_date,\n    SUBSTR(o.txn_date, 1, 10) AS txn_date_short\n    FROM user_order o \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    AND o.record_status = 1\n    GROUP BY txn_date_short","timestamp":"2023-06-29T09:48:25.835Z"}
+{"level":"info","message":"SELECT o.product_id,SUM(o.product_amount) AS sale_count,\n    o.product_price,SUM(o.order_price_total) as total_sale,\n    o.txn_date,o.record_status, \n    p.outlet,p.pro_name ,p.name \n    FROM user_order o \n    LEFT JOIN (SELECT p.pro_id,p.outlet,p.pro_name,u.name FROM product p LEFT JOIN outlet u ON u.id = p.outlet) p \n    ON p.pro_id = o.product_id \n    WHERE  o.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59'\n    AND o.record_status = 1\n    GROUP BY o.product_id LIMIT 5 ","timestamp":"2023-06-29T09:48:25.878Z"}
+{"level":"info","message":"SELECT d.*,SUM(o.order_price_total) AS cart_total,\n    d.payment_code,\n    p.payment_status,\n    o.order_id,\n    d.record_status\n    FROM dynamic_customer d\n    LEFT JOIN user_order o ON o.locking_session_id = d.locking_session_id\n    LEFT JOIN order_payment p ON p.locking_session_id = d.locking_session_id\n    WHERE d.txn_date BETWEEN '2023-06-01 00:00:00' AND '2023-06-29 23:59:59' \n    \n    GROUP BY d.locking_session_id\n    ","timestamp":"2023-06-29T09:48:27.140Z"}
+{"level":"info","message":"Record count => 76","timestamp":"2023-06-29T09:48:28.311Z"}
+{"level":"info","message":"Cal finish","timestamp":"2023-06-29T09:48:28.314Z"}
+{"level":"info","message":{"locking_session_id":"1687160726770","order_id":10032,"payment_amount":189000,"payment_method":"TRANSFER","payment_status":"PAID","user_id":1000},"timestamp":"2023-06-29T09:49:09.207Z"}
+{"level":"info","message":"DYN CUS ","timestamp":"2023-06-29T09:49:09.209Z"}
+{"level":"info","message":"DYN TABLE","timestamp":"2023-06-29T09:49:09.906Z"}
+{"level":"info","message":"PAYMENT SQL ","timestamp":"2023-06-29T09:49:09.910Z"}
+{"level":"info","message":"order_payment ","timestamp":"2023-06-29T09:49:10.159Z"}
+{"level":"info","message":"rider[object SequelizeInstance:rider],[object SequelizeInstance:rider]","timestamp":"2023-06-29T09:50:00.777Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-29T09:58:43.644Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-29T09:58:43.646Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-29T09:58:43.647Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-29T09:58:43.648Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-29T09:58:43.649Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-29T09:58:44.343Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-29T09:58:44.343Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-29T09:58:44.344Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-29T09:58:47.497Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-29T10:00:14.683Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-29T10:05:04.486Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-29T10:05:04.488Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-29T10:05:04.489Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-29T10:05:04.489Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-29T10:05:04.491Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-29T10:05:05.223Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-29T10:05:05.223Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-29T10:05:05.224Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-29T10:05:08.233Z"}
+{"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-29T10:06:34.321Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-29T14:28:37.664Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-29T14:28:37.666Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-29T14:28:37.667Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-29T14:28:37.667Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-29T14:28:37.669Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-29T14:28:38.506Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-29T14:28:38.506Z"}
+{"level":"warn","message":"env: dcommerce_dev_1","timestamp":"2023-06-29T14:28:38.507Z"}

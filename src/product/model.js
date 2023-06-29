@@ -1,54 +1,51 @@
 
 
 module.exports = (sequelize, DataTypes) => {
-    const Card = sequelize.define('card', {
-        card_type_code: {
+    const Product = sequelize.define('product', {
+        pro_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            unique: true // Define the column as unique
         },
-        product_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        cost: {
-            type: DataTypes.DOUBLE,
-            allowNull: false,
-        },
-        card_number: {
+        // outlet: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     defaultValue: 1,
+        // },
+        pro_name: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
         },
-        card_isused: {
+        pro_price: {
+            type: DataTypes.STRING,
+            defaultValue: 0
+            // allowNull: false,
+        },
+        pro_desc: {
+            type: DataTypes.STRING,
+        },
+        pro_status: {
+            type: DataTypes.BOOLEAN,
+            defaultValue:false
+        },
+        pro_image_path: {
+            type: DataTypes.STRING,
+        },
+        retail_cost_percent: {
+            type: DataTypes.DOUBLE,
+            defaultValue: 0
+        },
+        cost_price: {
+            type: DataTypes.DOUBLE,
+            defaultValue: 0
+        },
+        stock_count: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             defaultValue: 0
         },
         locking_session_id: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        card_input_date: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: sequelize.NOW,
-        },
-        inputter: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        update_user: {
-            type: DataTypes.INTEGER,
-        },
-        update_time: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: sequelize.NOW,
-        },
-        update_time_new: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: sequelize.NOW,
         },
         isActive: {
             type: DataTypes.BOOLEAN,
@@ -69,7 +66,7 @@ module.exports = (sequelize, DataTypes) => {
         freezeTableName: true,
     })
 
-    return Card;
+    return Product;
 };
 
 // 1. STRING: A variable length string.
