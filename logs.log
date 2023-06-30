@@ -8482,3 +8482,20 @@
 {"level":"warn","message":"env: dcommerce_pro_peeair4","timestamp":"2023-06-30T09:07:23.206Z"}
 {"level":"info","message":"DB Connection established","timestamp":"2023-06-30T09:07:26.634Z"}
 {"level":"info","message":"Datatase is synchronize","timestamp":"2023-06-30T09:08:52.876Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-30T09:15:49.761Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-30T09:15:49.764Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-30T09:15:49.765Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-30T09:15:49.765Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-30T09:15:49.767Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-30T09:15:50.509Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-30T09:15:50.510Z"}
+{"level":"warn","message":"env: dcommerce_pro_peeair4","timestamp":"2023-06-30T09:15:50.511Z"}
+{"level":"info","message":"DB Connection established","timestamp":"2023-06-30T09:15:53.639Z"}
+{"level":"info","message":"Hello, Winston!","timestamp":"2023-06-30T09:18:35.542Z"}
+{"level":"warn","message":"This is a warning message.","timestamp":"2023-06-30T09:18:35.544Z"}
+{"level":"error","message":"This is an error message.","timestamp":"2023-06-30T09:18:35.545Z"}
+{"level":"info","message":"This is an information message.","timestamp":"2023-06-30T09:18:35.545Z"}
+{"ip":"192.168.1.1","level":"info","message":"User logged in","timestamp":"2023-06-30T09:18:35.546Z","username":"johndoe"}
+{"level":"info","message":"Dcommerce is up","timestamp":"2023-06-30T09:18:36.363Z"}
+{"level":"info","message":"app is runing: 8080","timestamp":"2023-06-30T09:18:36.364Z"}
+{"level":"warn","message":"env: dcommerce_pro_jack42","timestamp":"2023-06-30T09:18:36.364Z"}
