@@ -11,7 +11,7 @@ const config={
         // user:'jack42',
         // password:'sdat@3480',
         // database:'peeair_demo',
-        database:'dcommerce_dev_1',
+        database:'dcommerce_pro_peeair4',
         // database:'dcommerce_jack42_production',
         // database:'dcommerce_production',
         port: 34248,
