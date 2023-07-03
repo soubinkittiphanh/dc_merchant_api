@@ -10,11 +10,9 @@ const config={
         password:'SDAT@3480',
         // user:'jack42',
         // password:'sdat@3480',
-        // database:'peeair_demo',
         // database:'dcommerce_pro_peeair4',
         database:'dcommerce_pro_jack42',
-        // database:'dcommerce_jack42_production',
-        // database:'dcommerce_production',
+        // database:'dcommerce_dev_1',
         port: 34248,
     }
 }

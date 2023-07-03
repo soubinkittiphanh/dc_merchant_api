@@ -16,7 +16,7 @@ function generateRandomString(length) {
 const createHulkStockCard = (req, res) => {
 
     const { inputter, product_id, totalCost, stocCardkQty } = req.body;
-    const costPerUnit = totalCost / stocCardkQty;
+    const costPerUnit = totalCost ;
     const lockingSessionId = Date.now();
     const rowsToInsert = [
 

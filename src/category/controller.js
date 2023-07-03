@@ -32,14 +32,11 @@ const getCategoryById = async (req, res) => {
 
 // Create a new category
 const createCategory = async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
+
   const { categ_id, categ_name, categ_desc, isActive } = req.body;
   try {
     const newCategory = await Category.create({
-      categ_id,
+      // categ_id,
       categ_name,
       categ_desc,
       isActive,
@@ -53,10 +50,7 @@ const createCategory = async (req, res) => {
 
 // Update an existing category by ID
 const updateCategoryById = async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
+
   const { categ_id } = req.params;
   const { categ_name, categ_desc, isActive } = req.body;
   try {

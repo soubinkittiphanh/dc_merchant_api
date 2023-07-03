@@ -1,19 +1,39 @@
 
-// const logger = require('../api/logger');
-
+const logger = require('../api/logger');
+const Currency = require('../models').currency; 
 
 // const PoLine = require('../models').poLine
-// const createBulk = async (req, res, lines, headerId) => {
-//     PoLine.bulkCreate(assignHeaderId(lines, headerId))
-//         .then(() => {
-//             logger.info('Rows inserted successfully')
-//             return res.status(200).send("Transction completed")
-//         })
-//         .catch((error) => {
-//             logger.error('Error inserting rows:', error)
-//             return res.status(403).send("Server error " + error)
-//         });
-// }
+const createBulk = async (req, res) => {
+    const currencyList = [
+        {
+            code: 'LAK',
+            name: 'Laotian Kip',
+            rate: 1,
+            isActive: true
+        },
+        {
+            code: 'USD',
+            name: 'United States Dollar',
+            rate: 19000,
+            isActive: true
+        },
+        {
+            code: 'THB',
+            name: 'Thai Baht',
+            rate: 550,
+            isActive: true
+        }
+    ]
+    Currency.bulkCreate(currencyList)
+        .then(() => {
+            logger.info('Rows inserted successfully')
+            return res.status(200).send("Transction completed")
+        })
+        .catch((error) => {
+            logger.error('Error inserting rows:', error)
+            return res.status(403).send("Server error " + error)
+        });
+}
 
 // const updateBulk = async (req, res, lines, headerId) => {
 //     let listOfNotFoundEntry = []
@@ -55,7 +75,6 @@
 //     return entry
 // }
 
-// module.exports = {
-//     createBulk,
-//     updateBulk
-// }
+module.exports = {
+    createBulk,
+}

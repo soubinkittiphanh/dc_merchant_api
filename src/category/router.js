@@ -9,10 +9,10 @@ const validator = require("./validator")
 router.use(validateToken)
 
 router
-.post("/create",validator.createReceiveHeaderValidation, controller.createCategory)
-.put("/update/:id",validator.updateReceiveHeaderValidation, controller.updateCategoryById)
-.delete("/find/:id", controller.deleteCategoryById)
+.post("/create", controller.createCategory)
+.put("/update/:categ_id", controller.updateCategoryById)
+.delete("/find/:categ_id", controller.deleteCategoryById)
 .get("/find", controller.getAllCategories)
-.get("/find/:id", controller.getCategoryById)
+.get("/find/:categ_id", controller.getCategoryById)
 // .post("/bulkCreate",service.createHulkStockCard)
 module.exports = router

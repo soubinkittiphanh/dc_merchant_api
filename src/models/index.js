@@ -37,7 +37,7 @@ db.campaignEntry = require("../controllers/admin/campaign/entry/model")(sequeliz
 db.rider = require("../rider/model")(sequelize,DataTypes);
 db.card = require("../card/model")(sequelize,DataTypes);
 db.product = require("../product/model")(sequelize,DataTypes);
-db.catetgory = require("../category/model")(sequelize,DataTypes);
+db.category = require("../category/model")(sequelize,DataTypes);
 db.outlet = require("../outlet/model")(sequelize,DataTypes);
 db.poHeader = require("../PO/model")(sequelize,DataTypes);
 db.poLine = require("../PO/line/model")(sequelize,DataTypes);
@@ -69,10 +69,10 @@ db.gl.belongsTo(db.chartAccount,{
 //********************************** */
 // ***** NEW RELATION ************** */
 //********************************** */
-db.catetgory.hasMany(db.product,{
+db.category.hasMany(db.product,{
     as:'products'
 })
-db.product.belongsTo(db.catetgory,{
+db.product.belongsTo(db.category,{
     foreignKey:'pro_category',
     as:'category'
 })

@@ -209,7 +209,7 @@ const findOrderByUserId = async (req, res) => {
     LEFT JOIN order_status s ON s.id = o.record_status
     WHERE o.user_id = '${memId}' AND o.txn_date BETWEEN'${fDate} 00:00:00' AND '${tDate} 23:59:59'
     `
-    logger.info("Sql command: ", sqlCom);
+    logger.info("Sql command: "+ sqlCom);
     Db.query(sqlCom, (er, re) => {
         if (er) return res.status(201).send("Database error: " + er)
         return res.status("200").send(re);

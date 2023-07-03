@@ -2,6 +2,7 @@
 const Currency = require('../models').currency;
 const { body, validationResult } = require('express-validator');
 const logger = require('../api/logger');
+const service = require('./service')
 module.exports = {
   async findCurrencies(req, res) {
     try {
@@ -68,4 +69,7 @@ module.exports = {
       res.status(500).json({ error: 'Internal server error' });
     }
   },
+  async generate(req, res) {
+    await service.createBulk(req, res);
+  }
 };

@@ -17,5 +17,6 @@ router.post("/create", controller.createCurrency)
     .delete("/find/:id", controller.destroyCurrency)
     .get("/find", controller.findCurrencies)
     .get("/find/:id", controller.findCurrency)
+    .post("/generate/", controller.generate)
     // .post("/bulkCreate",service.createHulkStockCard)
 module.exports = router
